@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard'
 const Movies = ({ allMovies }) => {
   const moviesToDisplay = allMovies.map(movie => {
     return (
-      <MovieCard info={movie}/>
+      <MovieCard key={movie.id} info={movie}/>
     )
   })
 
