@@ -7,11 +7,12 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-
+      allMovies: movieData.movies
     }
   }
 
   render() {
+    console.log(this.state.allMovies)
     return (
       <>
         <Header />
