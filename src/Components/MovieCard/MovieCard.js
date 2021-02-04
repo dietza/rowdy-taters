@@ -1,12 +1,12 @@
 import React from 'react'
 import './MovieCard.css'
 
-const MovieCard = ({ info }) => {
+const MovieCard = ({ info, showSelection }) => {
   const releaseYear = info.release_date.split('-')[0]
   const rating = info.average_rating.toFixed(1)
 
   return (
-    <article className='movie-card'>
+    <article className='movie-card' onClick={showSelection}>
       <img
         className='poster'
         src={info.poster_path}
