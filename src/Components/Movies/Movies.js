@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard'
+import './Movies.css'
 
 const Movies = ({ allMovies }) => {
   const moviesToDisplay = allMovies.map(movie => {
@@ -9,9 +10,9 @@ const Movies = ({ allMovies }) => {
   })
 
   return (
-    <>
+    <section className='movie-card-container'>
       {moviesToDisplay}
-    </>
+    </section>
   )
 }
 

@@ -1,0 +1,9 @@
+.movie-card {
+  border: 2pt solid black;
+  width: 25vw;
+}
+
+.poster {
+  height: 40vh;
+  width: auto;
+}

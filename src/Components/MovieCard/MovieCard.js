@@ -1,11 +1,12 @@
 import React from 'react'
+import './MovieCard.css'
 
 const MovieCard = ({ info }) => {
   const releaseYear = info.release_date.split('-')[0]
   const rating = info.average_rating.toFixed(1)
 
   return (
-    <>
+    <article className='movie-card'>
       <img
         className='poster'
         src={info.poster_path}
@@ -20,7 +21,7 @@ const MovieCard = ({ info }) => {
       <p className='movie-rating'>
         {`Tater Rating: ${rating}`}
       </p>
-    </>
+    </article>
   )
 }
 
