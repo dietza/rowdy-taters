@@ -12,11 +12,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.allMovies)
     return (
       <>
         <Header />
-        <Movies />
+        <Movies allMovies={this.state.allMovies}/>
       </>
     )
   }

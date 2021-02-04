@@ -1,8 +1,17 @@
-import React from 'react'
+import React from 'react';
+import MovieCard from '../MovieCard/MovieCard'
 
-const Movies = () => {
+const Movies = ({ allMovies }) => {
+  const moviesToDisplay = allMovies.map(movie => {
+    return (
+      <MovieCard info={movie}/>
+    )
+  })
+
   return (
-    <p>movies here</p>
+    <>
+      {moviesToDisplay}
+    </>
   )
 }
 
