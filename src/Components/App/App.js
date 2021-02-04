@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import movieData from '../../movieData'
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
-import movieData from '../../movieData'
 import Details from '../Details/Details'
 
 class App extends Component {
@@ -13,14 +13,19 @@ class App extends Component {
     }
   }
 
+  toggleSeletion = () => {
+    this.setState({ isMovieSelected: !this.state.isMovieSelected })
+  }
+
   render() {
     return (
       <>
         <Header />
         {!this.state.isMovieSelected && 
-        <Movies allMovies={this.state.allMovies}/>}
+        <Movies allMovies={this.state.allMovies} 
+        showSelection={this.toggleSeletion}/>}
         {this.state.isMovieSelected && 
-        <Details />}
+        <Details hideSelection={this.toggleSeletion}/>}
       </>
     )
   }
