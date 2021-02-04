@@ -12,15 +12,17 @@ const MovieCard = ({ info }) => {
         src={info.poster_path}
         alt={`${info.title} movie poster`}
       />
-      <h2 className='movie-title'>
-        {info.title}
-      </h2>
-      <p className='movie-release'>
-        {releaseYear}
-      </p>
-      <p className='movie-rating'>
-        {`Tater Rating: ${rating}`}
-      </p>
+      <div className="movie-specs">
+        <h2 className='movie-title'>
+          {info.title}
+        </h2>
+        <p className='movie-release'>
+          {releaseYear}
+        </p>
+        <p className='movie-rating'>
+          {`Tater Rating: ${rating}`}
+        </p>
+      </div>
     </article>
   )
 }

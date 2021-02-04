@@ -1,9 +1,27 @@
 .movie-card {
-  border: 2pt solid black;
-  width: 25vw;
+  border: 2pt solid white;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center
 }
 
 .poster {
   height: 40vh;
-  width: auto;
+  width: 13vw
+}
+
+.movie-specs {
+  align-content: flex-start;
+  width: 13vw;
+  padding-bottom: 5%;
+}
+
+.movie-release,
+.movie-rating {
+  margin: 0
+}
+
+.movie-title {
+  border-bottom: 2pt solid white;
 }

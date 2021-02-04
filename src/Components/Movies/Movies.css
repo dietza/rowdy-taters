@@ -1,6 +1,7 @@
 .movie-card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  width: 100vw;
+  justify-content: space-evenly;
+
+  width: 95vw;
 }
