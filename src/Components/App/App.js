@@ -10,11 +10,15 @@ class App extends Component {
     this.state = {
       allMovies: movieData.movies,
       isMovieSelected: false,
+      selectedMovieID: null,
     }
   }
 
-  toggleSeletion = () => {
-    this.setState({ isMovieSelected: !this.state.isMovieSelected })
+  toggleSeletion = (movieID) => {
+    this.setState({
+      isMovieSelected: !this.state.isMovieSelected, 
+      selectedMovieID: movieID,
+     })
   }
 
   render() {
@@ -22,7 +26,8 @@ class App extends Component {
       <>
         <Header />
         {!this.state.isMovieSelected && 
-        <Movies allMovies={this.state.allMovies} 
+        <Movies 
+        allMovies={this.state.allMovies} 
         showSelection={this.toggleSeletion}/>}
         {this.state.isMovieSelected && 
         <Details hideSelection={this.toggleSeletion}/>}

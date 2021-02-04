@@ -5,8 +5,16 @@ const MovieCard = ({ info, showSelection }) => {
   const releaseYear = info.release_date.split('-')[0]
   const rating = info.average_rating.toFixed(1)
 
+  const getID = () => {
+
+    console.log('ID in GET >>>', info.id)
+
+    const movieID = info.id
+    showSelection(movieID)
+  }
+
   return (
-    <article className='movie-card' onClick={showSelection}>
+    <article className='movie-card' onClick={getID} id={info.id}>
       <img
         className='poster'
         src={info.poster_path}

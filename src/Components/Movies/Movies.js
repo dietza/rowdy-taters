@@ -5,7 +5,11 @@ import './Movies.css'
 const Movies = ({ allMovies, showSelection }) => {
   const moviesToDisplay = allMovies.map(movie => {
     return (
-      <MovieCard key={movie.id} info={movie} showSelection={showSelection}/>
+      <MovieCard 
+        key={movie.id} 
+        info={movie} 
+        showSelection={showSelection}
+      />
     )
   })
 
