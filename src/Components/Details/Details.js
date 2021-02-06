@@ -13,7 +13,7 @@ const Details = ({ allMovies, selectedMovieID, hideSelection }) => {
   const releaseYear = movieToDisplay.release_date.split('-')[0]
   const rating = movieToDisplay.average_rating.toFixed(1)
   const genres = movieToDisplay.genres.map(genre => {
-  return <p>{genre}</p>
+  return <p className='details__each-genre'>{genre}</p>
   })
 
   const clearID = () => {
@@ -40,16 +40,16 @@ const Details = ({ allMovies, selectedMovieID, hideSelection }) => {
           {`Tater Rating: ${rating}`}
         </p>
         <p className='details__movie-release'>
-          {releaseYear}
+          {`${releaseYear} | ${movieToDisplay.runtime} mins`}
         </p>
-        <p className='details__movie-runtime'>
+        {/* <p className='details__movie-runtime'>
           {`${movieToDisplay.runtime} mins`}
-        </p>
+        </p> */}
         <p className='details__movie-overview'>
           {movieToDisplay.overview}
         </p>
         <div className='details__movie-genres'>
-          {genres}
+          Genre: {genres}
         </div>
       </article>
       {/* <p>{videos???}</p> */}

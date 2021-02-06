@@ -1,5 +1,4 @@
 .details__details-view {
-  border: 2pt solid red;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -12,13 +11,13 @@
   align-items: center;
   font-family: 'Oswald',
   sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-stretch: normal;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   border: 0;
   padding: .5rem;
-  margin: 1rem;
+  margin: 2rem;
   align-self: flex-start;
 }
 
@@ -27,8 +26,8 @@ button:hover {
 }
 
 .details__back-arrow {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   padding: .5rem;
 }
 
@@ -57,4 +56,13 @@ button:hover {
 .details__movie-specs {
   align-content: flex-start;
   width: 50vw;
+}
+
+.details__movie-genres {
+  display: flex;
+  align-items: center;
+}
+
+.details__each-genre {
+  padding-left: .75rem;
 }
