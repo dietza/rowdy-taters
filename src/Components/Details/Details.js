@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './Details.css'
-import backArrow from './double-left-arrows.svg'
 import apiCalls from '../../apiCalls'
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
+import backArrow from './double-left-arrows.svg'
+import './Details.css'
 
 class Details extends Component {
   constructor(props) {
@@ -11,12 +11,14 @@ class Details extends Component {
       selectedMovieID: props.selectedMovieID,
       movieToDisplay: {},
       isLoading: true,
+      error: ""
     }
   }
 
   componentDidMount() {
     apiCalls.fetchMovieDetails(this.state.selectedMovieID)
-    .then(movie => this.setState({ movieToDisplay: movie.movie, isLoading: false }))
+      .then(movie => this.setState({ movieToDisplay: movie.movie, isLoading: false }))
+      .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
   }
   
   clearID = () => {
@@ -30,6 +32,8 @@ class Details extends Component {
         <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
         {'All Movies'}
         </button>
+
+        {this.state.error !== "" && <h2>{this.state.error}</h2>}
 
         {this.state.isLoading && 
         <h1>Loading...</h1>}

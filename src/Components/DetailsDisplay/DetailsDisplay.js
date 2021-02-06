@@ -25,9 +25,6 @@ const DetailsDisplay = ({ movieToDisplay }) => {
         <p className='details__movie-release'>
           {`${releaseYear} | ${movieToDisplay.runtime} mins`}
         </p>
-        <p className='details__movie-runtime'>
-          {`${movieToDisplay.runtime} mins`}
-        </p> 
         <p className='details__movie-overview'>
           {movieToDisplay.overview}
         </p>

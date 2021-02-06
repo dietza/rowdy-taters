@@ -12,7 +12,8 @@ class App extends Component {
       allMovies: [],
       isMovieSelected: false,
       selectedMovieID: null,
-      isLoading: true
+      isLoading: true,
+      error: ""
     }
   }
 
@@ -24,14 +25,16 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-      apiCalls.fetchAllMovies()
+    apiCalls.fetchAllMovies()
       .then(movies => this.setState({ allMovies: movies.movies, isLoading: false }))
+      .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
   }
 
   render() {
     return (
       <>
         <Header />
+        {this.state.error !== "" && <h2>{this.state.error}</h2>}
         {!this.state.isMovieSelected && !this.state.isLoading &&
         <Movies 
         allMovies={this.state.allMovies} 
@@ -44,5 +47,5 @@ class App extends Component {
     )
   }
 }
-
+//conditional render for whole render chunk 
 export default App;
