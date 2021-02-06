@@ -2,6 +2,8 @@
   font-family: 'Lexend Mega',
   sans-serif;
   font-size: xxx-large;
-  height: 15vh;
-  width: 95vw
+  width: 100vw;
+  padding: 3rem 0rem 1.5rem 6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2pt solid white;
 }
