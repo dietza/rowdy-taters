@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import apiCalls from '../../apiCalls'
+import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
 import './Details.css'
@@ -17,7 +17,7 @@ class Details extends Component {
   }
 
   componentDidMount() {
-    apiCalls.fetchMovieDetails(this.state.selectedMovieID)
+    fetchMovieDetails(this.state.selectedMovieID)
       .then(movie => {
         this.setState({ movieToDisplay: movie.movie, isLoading: false })
         this.findVideos()
@@ -26,7 +26,7 @@ class Details extends Component {
  
   }
   findVideos = () => {
-    apiCalls.fetchMovieVideos(this.state.selectedMovieID)
+    fetchMovieVideos(this.state.selectedMovieID)
       .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
       .catch(error =>  this.setState({error: "These taters got too rowdy - check back later!"}) )
   }  

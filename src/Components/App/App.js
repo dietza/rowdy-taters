@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
-import apiCalls from '../../apiCalls'
+import { fetchAllMovies } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    apiCalls.fetchAllMovies()
+    fetchAllMovies()
       .then(movies => this.setState({ allMovies: movies.movies, isLoading: false }))
       .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
   }
