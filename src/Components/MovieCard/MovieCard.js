@@ -6,9 +6,6 @@ const MovieCard = ({ info, showSelection }) => {
   const rating = info.average_rating.toFixed(1)
 
   const getID = () => {
-
-    console.log('ID in GET >>>', info.id)
-
     const movieID = info.id
     showSelection(movieID)
   }
@@ -20,7 +17,7 @@ const MovieCard = ({ info, showSelection }) => {
         src={info.poster_path}
         alt={`${info.title} movie poster`}
       />
-      <div className="movie-specs">
+      <div className='movie-specs'>
         <h2 className='movie-title'>
           {info.title}
         </h2>

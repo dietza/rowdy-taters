@@ -30,7 +30,10 @@ class App extends Component {
         allMovies={this.state.allMovies} 
         showSelection={this.toggleSeletion}/>}
         {this.state.isMovieSelected && 
-        <Details hideSelection={this.toggleSeletion}/>}
+        <Details 
+        allMovies={this.state.allMovies}
+        selectedMovieID={this.state.selectedMovieID}
+        hideSelection={this.toggleSeletion}/>}
       </>
     )
   }
