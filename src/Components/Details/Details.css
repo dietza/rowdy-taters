@@ -34,6 +34,7 @@ button:hover {
 
 .details__backdrop {
   margin: 0;
+  position: relative;
 }
 
 .details__backdrop-img {
@@ -45,6 +46,12 @@ button:hover {
 .details__movie-title {
   color: white;
   border-bottom: 2pt solid white;
+  position: absolute;
+  bottom: .25rem;
+  left: 2.25rem;
+  background-color: transparent;
+  font-size: 60pt;
+  padding-left: .85rem;
 }
 
 .details__movie-specs {
