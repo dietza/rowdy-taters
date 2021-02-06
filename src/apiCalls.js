@@ -8,6 +8,11 @@ const apiCalls = {
     return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
       .then(response => response.json())
   },
+
+  fetchMovieVideos(movieID) {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}/videos`)
+      .then(response => response.json())
+  },
 }
 // separate these bad bois
 export default apiCalls;

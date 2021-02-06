@@ -11,16 +11,26 @@ class Details extends Component {
       selectedMovieID: props.selectedMovieID,
       movieToDisplay: {},
       isLoading: true,
-      error: ""
+      error: "",
+      trailerToDisplay: {}
     }
   }
 
   componentDidMount() {
     apiCalls.fetchMovieDetails(this.state.selectedMovieID)
-      .then(movie => this.setState({ movieToDisplay: movie.movie, isLoading: false }))
+      .then(movie => {
+        this.setState({ movieToDisplay: movie.movie, isLoading: false })
+        this.findVideos()
+      })
       .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
+ 
   }
-  
+  findVideos = () => {
+    apiCalls.fetchMovieVideos(this.state.selectedMovieID)
+      .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
+      .catch(error =>  this.setState({error: "These taters got too rowdy - check back later!"}) )
+  }  
+
   clearID = () => {
     this.props.hideSelection(null)
   }
@@ -39,7 +49,7 @@ class Details extends Component {
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
-        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} />}
+        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailerToDisplay={this.state.trailerToDisplay}/>}
       </section>
     )
   }
