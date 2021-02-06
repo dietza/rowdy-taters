@@ -24,23 +24,18 @@ class Details extends Component {
   }
   
   render() {
-    console.log(this.state.movieToDisplay, "MOVIE INFO")
-
     return (
       <section className='details__details-view'>
         <button className='return-to-home-view-btn' onClick={this.clearID}>
         <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
         {'All Movies'}
-      </button>
+        </button>
 
         {this.state.isLoading && 
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
-        <DetailsDisplay 
-          key={this.state.selectedMovieID} 
-          movieToDisplay={this.state.movieToDisplay}
-        />}
+        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} />}
       </section>
     )
   }
