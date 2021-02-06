@@ -12,7 +12,7 @@ const Movies = ({ allMovies, showSelection }) => {
       />
     )
   })
-  console.log(allMovies, "ALL MOVIES")
+
   return (
     <section className='movie-card-container'>
       {moviesToDisplay}

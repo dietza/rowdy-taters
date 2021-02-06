@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
+import apiCalls from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -23,8 +24,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
+      apiCalls.fetchAllMovies()
       .then(movies => this.setState({ allMovies: movies.movies, isLoading: false }))
   }
 
@@ -38,7 +38,6 @@ class App extends Component {
         showSelection={this.toggleSelection}/>}
         {this.state.isMovieSelected && 
         <Details 
-        allMovies={this.state.allMovies}
         selectedMovieID={this.state.selectedMovieID}
         hideSelection={this.toggleSelection}/>}
       </>
