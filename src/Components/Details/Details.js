@@ -1,4 +1,6 @@
 import React from 'react'
+import './Details.css'
+import backArrow from './double-left-arrows.svg'
 
 const Details = ({ allMovies, selectedMovieID, hideSelection }) => {
 
@@ -19,39 +21,41 @@ const Details = ({ allMovies, selectedMovieID, hideSelection }) => {
   }
 
   return (
-    <>
-    <button className='return-to-home-view-btn' onClick={clearID}>
-      {'<-- All Movies'}
-    </button>
-    <article className='details__poster'>
-     <img 
-      className='details__backdrop-img'
-      src={movieToDisplay.backdrop_path}
-      alt={`${movieToDisplay.title} movie backdrop`}
-      />
-      <h1 className='details__movie-title'>{movieToDisplay.title}</h1>
-    </article>
-    <article className='details__movie-specs'>
-      <p className='details__movie-rating'>
-        {`Tater Rating: ${rating}`}
-      </p>
-      <p className='details__movie-release'>
-        {releaseYear}
-      </p>
-      <p className='details__movie-runtime'>
-        {`${movieToDisplay.runtime} mins`}
-      </p>
-      <p className='details__movie-overview'>
-        {movieToDisplay.overview}
-      </p>
-      <div className='details__movie-genres'>
-        {genres}
-      </div>
-    </article>
-
+    // <>
+    <section className='details__details-view'>
+      <button className='return-to-home-view-btn' onClick={clearID}>
+        <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
+        {'All Movies'}
+      </button>
+      <article className='details__backdrop'>
+       <img 
+        className='details__backdrop-img'
+        src={movieToDisplay.backdrop_path}
+        alt={`${movieToDisplay.title} movie backdrop`}
+        />
+        <h1 className='details__movie-title'>{movieToDisplay.title}</h1>
+      </article>
+      <article className='details__movie-specs'>
+        <p className='details__movie-rating'>
+          {`Tater Rating: ${rating}`}
+        </p>
+        <p className='details__movie-release'>
+          {releaseYear}
+        </p>
+        <p className='details__movie-runtime'>
+          {`${movieToDisplay.runtime} mins`}
+        </p>
+        <p className='details__movie-overview'>
+          {movieToDisplay.overview}
+        </p>
+        <div className='details__movie-genres'>
+          {genres}
+        </div>
+      </article>
       {/* <p>{videos???}</p> */}
+    </section>
 
-    </>
+    // </>
   )
 }
 
