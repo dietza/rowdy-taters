@@ -13,5 +13,25 @@ describe('Rowdy Taters', () => {
     .get('.details__back-arrow').should('have.attr', 'src', '/static/media/double-left-arrows.79365501.svg')
   });
 
+  it('Has the movie title', () => {
+    cy.get('.details__movie-title').contains('Money Plane')
+  });
+
+  it('Displays the movie rating', () => {
+    cy.get('.details__movie-rating').contains('Tater Rating: 6.1')
+  });
+
+  it('Displays the release year and runtime', () => {
+    cy.get('.details__movie-release').contains('2020 | 82 mins')
+  });
+
+  it('Displays movie synopsis', () => {
+    cy.get('.details__movie-overview').contains('A professional thief with $40 million in debt and his family\'s life on the line must commit one final heist - rob a futuristic airborne casino filled with the world\'s most dangerous criminals.')
+  });
+
+  it('Displays movie genres', () => {
+    cy.get('.details__movie-genres').contains('Genre: Action')
+  });
+
   
 });
