@@ -1,62 +1,58 @@
-import React from 'react'
-import './Details.css'
+import React, { Component } from 'react'
+import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
+import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
+import './Details.css'
 
-const Details = ({ allMovies, selectedMovieID, hideSelection }) => {
-
-  const movieToDisplay = allMovies.find(movie => {
-    return movie.id === selectedMovieID
-  })
-
-  console.log('MOVIE >>> ', movieToDisplay)
-
-  const releaseYear = movieToDisplay.release_date.split('-')[0]
-  const rating = movieToDisplay.average_rating.toFixed(1)
-  const genres = movieToDisplay.genres.map(genre => {
-  return <p className='details__each-genre'>{genre}</p>
-  })
-
-  const clearID = () => {
-    hideSelection(null)
+class Details extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      selectedMovieID: props.selectedMovieID,
+      movieToDisplay: {},
+      isLoading: true,
+      error: "",
+      trailerToDisplay: {}
+    }
   }
 
-  return (
-    // <>
-    <section className='details__details-view'>
-      <button className='return-to-home-view-btn' onClick={clearID}>
+  componentDidMount() {
+    fetchMovieDetails(this.state.selectedMovieID)
+      .then(movie => {
+        this.setState({ movieToDisplay: movie.movie, isLoading: false })
+        this.findVideos()
+      })
+      .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
+ 
+  }
+  findVideos = () => {
+    fetchMovieVideos(this.state.selectedMovieID)
+      .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
+      .catch(error =>  this.setState({error: "These taters got too rowdy - check back later!"}) )
+  }  
+
+  clearID = () => {
+    this.props.hideSelection(null)
+  }
+  
+  render() {
+    return (
+      <section className='details__details-view'>
+        <button className='return-to-home-view-btn' onClick={this.clearID}>
         <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
         {'All Movies'}
-      </button>
-      <article className='details__backdrop'>
-       <img 
-        className='details__backdrop-img'
-        src={movieToDisplay.backdrop_path}
-        alt={`${movieToDisplay.title} movie backdrop`}
-        />
-        <h1 className='details__movie-title'>{movieToDisplay.title}</h1>
-      </article>
-      <article className='details__movie-specs'>
-        <p className='details__movie-rating'>
-          {`Tater Rating: ${rating}`}
-        </p>
-        <p className='details__movie-release'>
-          {`${releaseYear} | ${movieToDisplay.runtime} mins`}
-        </p>
-        {/* <p className='details__movie-runtime'>
-          {`${movieToDisplay.runtime} mins`}
-        </p> */}
-        <p className='details__movie-overview'>
-          {movieToDisplay.overview}
-        </p>
-        <div className='details__movie-genres'>
-          Genre: {genres}
-        </div>
-      </article>
-      {/* <p>{videos???}</p> */}
-    </section>
+        </button>
 
-    // </>
-  )
+        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+
+        {this.state.isLoading && 
+        <h1>Loading...</h1>}
+
+        {!this.state.isLoading && 
+        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailerToDisplay={this.state.trailerToDisplay}/>}
+      </section>
+    )
+  }
 }
 
 export default Details
