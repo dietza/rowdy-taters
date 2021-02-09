@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
+import tater from '../../rowdytater1.png'
 import './Details.css'
 
 class Details extends Component {
@@ -43,9 +44,13 @@ class Details extends Component {
         {'All Movies'}
         </button>
 
-        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && 
+        <>
+          <h2>{this.state.error}</h2>
+          <img src={tater} alt="Angry Potato Icon"/>
+        </>}
 
-        {this.state.isLoading && 
+        {this.state.isLoading && this.state.error === "" && 
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 

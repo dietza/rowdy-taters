@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
 import { fetchAllMovies } from '../../apiCalls'
+import tater from '../../rowdytater1.png'
 
 class App extends Component {
   constructor() {
@@ -34,11 +35,17 @@ class App extends Component {
     return (
       <>
         <Header />
-        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && 
+        <>
+          <h2>{this.state.error}</h2>
+          <img src={tater} alt="Angry Potato Icon"/>
+        </>}
+
         {!this.state.isMovieSelected && !this.state.isLoading &&
         <Movies 
         allMovies={this.state.allMovies} 
         showSelection={this.toggleSelection}/>}
+
         {this.state.isMovieSelected && 
         <Details 
         selectedMovieID={this.state.selectedMovieID}
