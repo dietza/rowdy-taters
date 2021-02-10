@@ -5,6 +5,11 @@
   flex-direction: column;
   align-items: center
 }
+.movie-card:hover {
+  transition: all .75s;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
+}
 
 .poster {
   height: 40vh;
