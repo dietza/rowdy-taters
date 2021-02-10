@@ -23,8 +23,8 @@ class Details extends Component {
         this.findVideos()
       })
       .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
- 
   }
+
   findVideos = () => {
     fetchMovieVideos(this.state.selectedMovieID)
       .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
