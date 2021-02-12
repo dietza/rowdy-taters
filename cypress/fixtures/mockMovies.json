@@ -70,5 +70,26 @@
       "runtime":139,
       "tagline": "It's a movie!"
     }
-  ]
+  ],
+  "singleMovie": {
+    "id": 581392,
+    "poster_path": "https://image.tmdb.org/t/p/original//sy6DvAu72kjoseZEjocnm2ZZ09i.jpg",
+    "backdrop_path": "https://image.tmdb.org/t/p/original//gEjNlhZhyHeto6Fy5wWy5Uk3A9D.jpg",
+    "title": "Peninsula",
+    "average_rating": 7,
+    "release_date": "2020-07-15",
+    "overview": "Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!",
+    "genres": ["Drama", "Action", "Thiller"],
+    "budget":63000000,
+    "revenue":100853753,
+    "runtime":139,
+    "tagline": "It's a movie!"
+  },
+  "video": {
+    "id": 303,
+    "movie_id": 581392,
+    "key": "aRuhOJJA56U",
+    "site": "YouTube",
+    "type": "Featurette"
+    }
 }
