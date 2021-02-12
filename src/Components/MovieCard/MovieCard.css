@@ -1,6 +1,6 @@
 .movie-card {
   border: 2pt solid white;
-  width: 18vw;
+  width: 14rem;
   display: flex;
   flex-direction: column;
   align-items: center
@@ -12,8 +12,8 @@
 }
 
 .poster {
-  height: 40vh;
-  width: 13vw
+  height: 18.5rem;
+  width: 12.4rem;
 }
 
 .movie-specs {
@@ -29,4 +29,33 @@
 
 .movie-title {
   border-bottom: 2pt solid white;
+}
+
+@media screen and (max-width: 900px) {
+  .movie-card {
+    width: 30vw;
+  }
+
+  .movie-specs {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .movie-card {
+    width: 75vw;
+  }
+
+  .poster {
+    height: 60vh;
+    width: 40.5vw
+  }
+
+  .movie-specs {
+    width: 65vw;
+  }
+
+  .movie-title {
+    margin: .5rem 0 .5rem 0
+  }
 }
