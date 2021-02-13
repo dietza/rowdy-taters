@@ -65,9 +65,9 @@ describe('Money Plane Details view', () => {
     cy.get('.details__movie-genres').contains('Genre: Action')
   });
 
-  // it('Displays movie trailers', () => {
-  //   cy.get('iframe').click({force: true})
-  // });  ??????? Cant figure out how to test the trailer!
+  it('Displays movie trailers', () => {
+    cy.get('div div iframe').should('be.visible')
+  });
 
   it('All Movies button can take you back to main page', () => {
     cy.get('.return-to-home-view-btn').click()
