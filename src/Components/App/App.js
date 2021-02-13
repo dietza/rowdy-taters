@@ -34,7 +34,7 @@ class App extends Component {
     return (
       <>
         <Header />
-        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
         {!this.state.isMovieSelected && !this.state.isLoading &&
         <Movies 
         allMovies={this.state.allMovies} 

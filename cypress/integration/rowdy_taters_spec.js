@@ -1,36 +1,18 @@
-describe('Rowdy Taters', () => {
+describe('Rowdy Taters main page view', () => {
 
   const baseUrl = 'http://localhost:3000'
 
   before(() => {
+    cy
+    .fixture('mockMovies.json')
+    .then((mockMovies) => {
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+        statusCode: 200,
+        body: mockMovies
+      })
+    })
     cy.visit(baseUrl)
-  })
-
-  // it ('STUBS', () => {
-  //   cy.visit(baseUrl)
-  //   cy
-  //     .fixture('mockMovies.json')
-  //     .then((mockMovies) => {
-  //       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-  //         statusCode: 200,
-  //         body: mockMovies.allMovies
-  //       })
-  //     })
-  //     .get('#581392')
-  // })
-
-  // it ('Shows an error', () => {
-  //   cy.visit(baseUrl)
-  //   cy
-  //     .fixture('mockMovies.json')
-  //     .then((mockMovies) => {
-  //       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movis', {
-  //         statusCode: 404,
-  //       })
-  //     })
-  //     .get('#581392')
-  // })
-
+  });
 
   it ('Should have the correct url for the home page on load', () => {
     cy.url().should('include', '/')
@@ -44,7 +26,7 @@ describe('Rowdy Taters', () => {
   it ('Should display all movies in the collected data',  () => {
     cy
       .get('.movie-card-container')
-      .find('.movie-card').should('have.length', 40)
+      .find('.movie-card').should('have.length', 5)
   });
 
   it ('Each movie card should display a poster image',  () => {
@@ -72,27 +54,51 @@ describe('Rowdy Taters', () => {
       .get('#581392 .movie-rating').contains('Tater Rating: 7.0')
   });
 
-  it ('STUBS', () => {
+});
+
+
+describe('Main page error handling', () => {
+
+  const baseUrl = 'http://localhost:3000'
+
+  it ('Shows an error', () => {
     cy
-      .get('#581392')
-      .click()
-    cy
-      .fixture('mockMovies.json')
-      .then((mockMovies) => {
-        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392', {
-          statusCode: 200,
-          body: mockMovies.singleMovie
-        })
-        cy
-        .fixture('mockMovies.json')
-        .then((mockMovies) => {
-          cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392/videos', {
-            statusCode: 200,
-            body: mockMovies.video,
-          })
-        })
+    .fixture('mockMovies.json')
+    .then(() => {
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+        statusCode: 404,
       })
+    })
+
+    cy.visit(baseUrl)
+      .get('#581392')
   })
 
-
-});
+})
+  
+  
+  
+  
+  
+  
+    // it ('STUBS', () => {
+    //   cy
+    //     .get('#581392')
+    //     .click()
+    //   cy
+    //     .fixture('mockMovies.json')
+    //     .then((mockMovies) => {
+    //       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392', {
+    //         statusCode: 200,
+    //         body: mockMovies.singleMovie
+    //       })
+    //       cy
+    //       .fixture('mockMovies.json')
+    //       .then((mockMovies) => {
+    //         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392/videos', {
+    //           statusCode: 200,
+    //           body: mockMovies.video,
+    //         })
+    //       })
+    //     })
+    // })
