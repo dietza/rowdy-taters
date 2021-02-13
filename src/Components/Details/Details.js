@@ -24,7 +24,6 @@ class Details extends Component {
         this.findVideos()
       })
       .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
- 
   }
 
   findVideos = () => {
@@ -47,9 +46,9 @@ class Details extends Component {
           </button>
         </Link>
 
-        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && <h2 className='details__error-message'>{this.state.error}</h2>}
 
-        {this.state.isLoading && 
+        {this.state.isLoading && !this.state.error &&
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 

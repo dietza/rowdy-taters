@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-// import movieData from '../../movieData'
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
@@ -36,7 +35,7 @@ class App extends Component {
     return (
       <>
         <Header />
-        {this.state.error !== '' && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
         <Route exact path='/' 
           render={ () => { 
@@ -54,18 +53,9 @@ class App extends Component {
             hideSelection={this.toggleSelection}/>
           }}/>
 
-        {/* {!this.state.isMovieSelected && !this.state.isLoading &&
-        <Movies 
-        allMovies={this.state.allMovies} 
-        showSelection={this.toggleSelection}/>} */}
-
-        {/* {this.state.isMovieSelected && 
-        <Details 
-        selectedMovieID={this.state.selectedMovieID}
-        hideSelection={this.toggleSelection}/>} */}
       </>
     )
   }
 }
-//conditional render for whole render chunk 
+
 export default App;
