@@ -1,9 +1,10 @@
 .movie-card {
-  border: 2pt solid white;
+  border: .5pt solid white;
   width: 14rem;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  margin: .5rem
 }
 .movie-card:hover {
   transition: all .75s;
@@ -12,6 +13,7 @@
 }
 
 .poster {
+  padding-top: .5rem;
   height: 18.5rem;
   width: 12.4rem;
 }
@@ -31,7 +33,7 @@
   border-bottom: 2pt solid white;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
   .movie-card {
     width: 30vw;
   }
@@ -41,18 +43,18 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   .movie-card {
-    width: 75vw;
+    width: 20rem;
   }
 
   .poster {
-    height: 60vh;
-    width: 40.5vw
+    height: 25rem;
+    width: auto
   }
 
   .movie-specs {
-    width: 65vw;
+    width: 15rem;
   }
 
   .movie-title {
