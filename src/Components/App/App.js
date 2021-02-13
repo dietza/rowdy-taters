@@ -46,8 +46,6 @@ class App extends Component {
 
         <Route path='/:id' 
           render={( {match} ) => { 
-            console.log('MATCH in Route', match)
-
             return <Details 
             selectedMovieID={match.params.id}
             hideSelection={this.toggleSelection}/>

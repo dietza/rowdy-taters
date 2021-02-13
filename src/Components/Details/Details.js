@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
+import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
 import './Details.css'
@@ -58,4 +59,8 @@ class Details extends Component {
   }
 }
 
+Details.propTypes = {
+  selectedMovieID: PropTypes.string.isRequired,
+  hideSelection: PropTypes.func
+}
 export default Details
