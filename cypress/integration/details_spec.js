@@ -1,7 +1,39 @@
-describe('Rowdy Taters', () => {
+describe('Money Plane Details view', () => {
+
+  const baseUrl = 'http://localhost:3000/'
+  // const baseUrl = 'http://localhost:3000/694919'
+
   before(() => {
-    cy.visit('http://localhost:3000')
-      .get('#694919').click();
+    cy
+      .fixture('mockMovies.json')
+      .then((mockMovies) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+          statusCode: 200,
+          body: mockMovies
+        })
+      })
+
+    cy
+      .fixture('moneyPlaneMockData.json')
+      .then((mockMoneyPlaneData) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+          statusCode: 200,
+          body: mockMoneyPlaneData
+        })
+      })
+
+    cy
+      .fixture('moneyPlaneMockData.json')
+      .then((mockMoneyPlaneData) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
+          statusCode: 200,
+          body: mockMoneyPlaneData
+        })
+      })
+
+    cy.visit(baseUrl)
+    .get('#694919')
+    .click()
   });
 
   it('Has the site header - Rowdy Taters', () => {

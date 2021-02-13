@@ -77,7 +77,7 @@ describe('Main page error handling', () => {
 });
   
   
-describe('Details view', () => {
+describe('Peninsula Details view', () => {
 
   const baseUrl = 'http://localhost:3000'
 
@@ -92,20 +92,20 @@ describe('Details view', () => {
       })
 
     cy
-      .fixture('mockMovies.json')
-      .then((mockMovies) => {
+      .fixture('peninsulaMockData.json')
+      .then((mockPeninsulaData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392', {
           statusCode: 200,
-          body: mockMovies
+          body: mockPeninsulaData
         })
       })
 
     cy
-      .fixture('mockMovies.json')
-      .then((mockMovies) => {
+      .fixture('peninsulaMockData.json')
+      .then((mockPeninsulaData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392/videos', {
           statusCode: 200,
-          body: mockMovies
+          body: mockPeninsulaData
         })
       })
 
