@@ -71,7 +71,7 @@
       "tagline": "It's a movie!"
     }
   ],
-  "singleMovie": {
+  "movie": {
     "id": 581392,
     "poster_path": "https://image.tmdb.org/t/p/original//sy6DvAu72kjoseZEjocnm2ZZ09i.jpg",
     "backdrop_path": "https://image.tmdb.org/t/p/original//gEjNlhZhyHeto6Fy5wWy5Uk3A9D.jpg",
@@ -85,11 +85,13 @@
     "runtime":139,
     "tagline": "It's a movie!"
   },
-  "video": {
+  "videos": [
+    {
     "id": 303,
     "movie_id": 581392,
     "key": "aRuhOJJA56U",
     "site": "YouTube",
     "type": "Featurette"
     }
+  ]
 }

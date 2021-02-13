@@ -74,31 +74,49 @@ describe('Main page error handling', () => {
       .get('.error-message').should('contain', 'These taters got too rowdy - check back later!')
   })
 
-})
+});
   
   
-  
-  
-  
-  
-    // it ('STUBS', () => {
-    //   cy
-    //     .get('#581392')
-    //     .click()
-    //   cy
-    //     .fixture('mockMovies.json')
-    //     .then((mockMovies) => {
-    //       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392', {
-    //         statusCode: 200,
-    //         body: mockMovies.singleMovie
-    //       })
-    //       cy
-    //       .fixture('mockMovies.json')
-    //       .then((mockMovies) => {
-    //         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392/videos', {
-    //           statusCode: 200,
-    //           body: mockMovies.video,
-    //         })
-    //       })
-    //     })
-    // })
+describe('Details view', () => {
+
+  const baseUrl = 'http://localhost:3000'
+
+  before(() => {
+    cy
+      .fixture('mockMovies.json')
+      .then((mockMovies) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+          statusCode: 200,
+          body: mockMovies
+        })
+      })
+
+    cy
+      .fixture('mockMovies.json')
+      .then((mockMovies) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392', {
+          statusCode: 200,
+          body: mockMovies
+        })
+      })
+
+    cy
+      .fixture('mockMovies.json')
+      .then((mockMovies) => {
+        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/581392/videos', {
+          statusCode: 200,
+          body: mockMovies
+        })
+      })
+
+    cy.visit(baseUrl)
+  });
+
+  it ('Should route to movie details view on click of movie card', () => {
+    cy
+      .get('#581392')
+      .click()
+      .get('.details__movie-title').should('contain', 'Peninsula')
+  })
+
+});
