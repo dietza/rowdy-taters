@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import './MovieCard.css'
 
 const MovieCard = ({ info, showSelection }) => {
@@ -32,4 +33,8 @@ const MovieCard = ({ info, showSelection }) => {
   )
 }
 
+MovieCard.propTypes = {
+  info: PropTypes.object,
+  showSelection: PropTypes.func
+}
 export default MovieCard
