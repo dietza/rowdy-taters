@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
@@ -38,10 +39,12 @@ class Details extends Component {
   render() {
     return (
       <section className='details__details-view'>
-        <button className='return-to-home-view-btn' onClick={this.clearID}>
-        <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
-        {'All Movies'}
-        </button>
+        <Link to='/'>
+          <button className='return-to-home-view-btn' onClick={this.clearID}>
+          <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
+          {'All Movies'}
+          </button>
+        </Link>
 
         {this.state.error !== "" && <h2 className='details__error-message'>{this.state.error}</h2>}
 

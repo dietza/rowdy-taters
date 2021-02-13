@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-// import movieData from '../../movieData'
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
 import { fetchAllMovies } from '../../apiCalls'
+import './App.css'
 
 class App extends Component {
   constructor() {
@@ -27,7 +28,7 @@ class App extends Component {
   componentDidMount = () => {
     fetchAllMovies()
       .then(movies => this.setState({ allMovies: movies.movies, isLoading: false }))
-      .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
+      .catch(error => this.setState({ error: 'These taters got too rowdy - check back later!'}))
   }
 
   render() {
@@ -35,17 +36,26 @@ class App extends Component {
       <>
         <Header />
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
-        {!this.state.isMovieSelected && !this.state.isLoading &&
-        <Movies 
-        allMovies={this.state.allMovies} 
-        showSelection={this.toggleSelection}/>}
-        {this.state.isMovieSelected && 
-        <Details 
-        selectedMovieID={this.state.selectedMovieID}
-        hideSelection={this.toggleSelection}/>}
+
+        <Route exact path='/' 
+          render={ () => { 
+            return <Movies 
+              allMovies={this.state.allMovies} 
+              showSelection={this.toggleSelection}/>
+          }}/>
+
+        <Route path='/:id' 
+          render={( {match} ) => { 
+            console.log('MATCH in Route', match)
+
+            return <Details 
+            selectedMovieID={match.params.id}
+            hideSelection={this.toggleSelection}/>
+          }}/>
+
       </>
     )
   }
 }
-//conditional render for whole render chunk 
+
 export default App;
