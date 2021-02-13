@@ -5,11 +5,11 @@ describe('Money Plane Details view', () => {
 
   before(() => {
     cy
-      .fixture('mockMovies.json')
-      .then((mockMovies) => {
+      .fixture('moneyPlaneMockData.json')
+      .then((mockMoneyPlaneData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
           statusCode: 200,
-          body: mockMovies
+          body: mockMoneyPlaneData
         })
       })
 
