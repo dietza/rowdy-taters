@@ -71,7 +71,7 @@ describe('Main page error handling', () => {
     })
 
     cy.visit(baseUrl)
-      .get('#581392')
+      .get('.error-message').should('contain', 'These taters got too rowdy - check back later!')
   })
 
 })
