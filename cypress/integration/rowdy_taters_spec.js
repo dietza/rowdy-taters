@@ -4,11 +4,11 @@ describe('Rowdy Taters main page view', () => {
 
   before(() => {
     cy
-    .fixture('mockMovies.json')
-    .then((mockMovies) => {
+    .fixture('peninsulaMockData.json')
+    .then((mockPeninsulaData) => {
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
         statusCode: 200,
-        body: mockMovies
+        body: mockPeninsulaData
       })
     })
     cy.visit(baseUrl)
@@ -62,12 +62,8 @@ describe('Main page error handling', () => {
   const baseUrl = 'http://localhost:3000'
 
   it ('Shows an error', () => {
-    cy
-    .fixture('mockMovies.json')
-    .then(() => {
-      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-        statusCode: 404,
-      })
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 404,
     })
 
     cy.visit(baseUrl)

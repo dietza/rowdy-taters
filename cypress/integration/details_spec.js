@@ -73,3 +73,21 @@ describe('Money Plane Details view', () => {
     cy.get('.return-to-home-view-btn').click()
   });
 });
+
+
+describe('Details view error handling - Money Plane', () => {
+
+  const baseUrl = 'http://localhost:3000/'
+
+  it ('Shows an error', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+      statusCode: 404,
+    })
+
+    cy.visit(baseUrl)
+      .get('#694919')
+      .click()
+      .get('.details__error-message').should('contain', 'These taters got too rowdy - check back later!')
+  })
+
+});

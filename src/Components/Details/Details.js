@@ -43,9 +43,9 @@ class Details extends Component {
         {'All Movies'}
         </button>
 
-        {this.state.error !== "" && <h2>{this.state.error}</h2>}
+        {this.state.error !== "" && <h2 className='details__error-message'>{this.state.error}</h2>}
 
-        {this.state.isLoading && 
+        {this.state.isLoading && !this.state.error &&
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
