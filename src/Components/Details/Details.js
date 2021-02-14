@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
+import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from '../../double-left-arrows.svg'
 import './Details.css'
@@ -13,7 +14,7 @@ class Details extends Component {
       movieToDisplay: {},
       isLoading: true,
       error: "",
-      trailerToDisplay: {}
+      trailersToDisplay: []
     }
   }
 
@@ -28,7 +29,7 @@ class Details extends Component {
 
   findVideos = () => {
     fetchMovieVideos(this.state.selectedMovieID)
-      .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
+      .then(trailers => this.setState({ trailersToDisplay: trailers.videos }))
       .catch(error =>  this.setState({error: "These taters got too rowdy - check back later!"}) )
   }  
 
@@ -52,10 +53,14 @@ class Details extends Component {
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
-        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailerToDisplay={this.state.trailerToDisplay}/>}
+        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailersToDisplay={this.state.trailersToDisplay}/>}
       </section>
     )
   }
 }
 
+Details.propTypes = {
+  selectedMovieID: PropTypes.string.isRequired,
+  hideSelection: PropTypes.func.isRequired
+}
 export default Details

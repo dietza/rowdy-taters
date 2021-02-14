@@ -38,6 +38,7 @@ class App extends Component {
     return (
       <>
         <Header />
+      
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
         <Switch >
@@ -50,18 +51,18 @@ class App extends Component {
           
           <Route path='/about' component={ About }/>
 
+
           <Route path='/contact-us' component={ Contact }/>
 
           <Route path='/:id' 
             render={( {match} ) => { 
-              console.log('MATCH in Route', match)
-              
               return <Details 
               selectedMovieID={match.params.id}
               hideSelection={this.toggleSelection}/>
             }}/>
+    
           </Switch>
-
+    
         <Footer />
       </>
     )
