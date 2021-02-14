@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
 import About from '../About/About'
+import Contact from '../Contact/Contact'
 import { fetchAllMovies } from '../../apiCalls'
 import './App.css'
 
@@ -48,6 +49,8 @@ class App extends Component {
             }}/>
           
           <Route path='/about' component={ About }/>
+
+          <Route path='/contact-us' component={ Contact }/>
 
           <Route path='/:id' 
             render={( {match} ) => { 
