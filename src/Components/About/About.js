@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import backArrow from '../../double-left-arrows.svg'
-
+import './About.css'
 
 const About = () => {
   return (
     <>
-    <Link to='/'>
-      <button className='return-to-home-view-btn'>
-        <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
+    <Link to='/' className="about__return-to-home-link">
+      <button className='about__return-to-home-view-btn'>
+        <img src={backArrow} alt='back arrow icon' className='about__back-arrow'/>
         All Movies
       </button>
     </Link>

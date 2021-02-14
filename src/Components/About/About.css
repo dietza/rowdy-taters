@@ -1,0 +1,25 @@
+
+.about__return-to-home-link {
+  align-self: flex-start;
+}
+
+.about__return-to-home-view-btn {
+  display: flex;
+  align-items: center;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: white;
+  border: 0;
+  margin-left: .5rem;
+  align-self: flex-start;
+}
+
+button:hover {
+  border: 2pt solid white;
+}
+
+.about__back-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .5rem;
+}
