@@ -29,7 +29,7 @@ class SearchBar extends Component {
           placeholder="Search by title or movie genres..."
           name="movie-search"
           value={this.state.searchInput}
-          onChange={this.handleSearch}
+          onChange={(event) => this.handleSearch(event)}
         />
       </form>
     )

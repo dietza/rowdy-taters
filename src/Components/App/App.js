@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
@@ -14,7 +14,7 @@ class App extends Component {
     super()
     this.state = {
       allMovies: [],
-      filteredMovies:[],
+      filteredMovies: null,
       isMovieSelected: false,
       selectedMovieID: null,
       isLoading: true,
@@ -36,27 +36,18 @@ class App extends Component {
   }
 
   filterMoviesDisplay = (searchTerms) => {
-
-    console.log('SEARCH TERMS', searchTerms)
-
     const allMovies = this.state.allMovies;
     const filteredMovies = allMovies.filter(movie => {
-
       const searchTitle = movie.title.toLowerCase()
       return searchTitle.includes(searchTerms.toLowerCase())
     })
+    
     this.setState({
-
-      
-
       filteredMovies: filteredMovies,
     })
   }
 
   render() {
-
-    console.log('FILTERED MOVIES', this.state.filteredMovies)
-
     return (
       <>
         <Header filterMoviesDisplay={ this.filterMoviesDisplay }/>
@@ -73,7 +64,6 @@ class App extends Component {
             }}/>
           
           <Route path='/about' component={ About }/>
-
 
           <Route path='/contact-us' component={ Contact }/>
 

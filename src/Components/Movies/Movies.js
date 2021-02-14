@@ -1,18 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MovieCard from '../MovieCard/MovieCard'
 import './Movies.css'
 
 const Movies = ({ allMovies, showSelection, filteredMovies }) => {
 
   let moviesToDisplay;
-
-  // if (filteredMovies) {
-  //   createMovieCards(filteredMovies)
-  // } else {
-  //   createMovieCards(allMovies)
-  // }
 
   const createMovieCards = (movies) => {
     moviesToDisplay = movies.map(movie => {
@@ -28,11 +22,9 @@ const Movies = ({ allMovies, showSelection, filteredMovies }) => {
         </Link>
       )
     })
-
-    return moviesToDisplay
   }
 
-  if (filteredMovies.length > 0) {
+  if (filteredMovies) {
     createMovieCards(filteredMovies)
   } else {
     createMovieCards(allMovies)
@@ -40,6 +32,7 @@ const Movies = ({ allMovies, showSelection, filteredMovies }) => {
 
   return (
     <section className='movie-card-container'>
+      { moviesToDisplay.length === 0 && <h2>Sorry, no movies matched your search!</h2> }
       {moviesToDisplay}
     </section>
   )
@@ -47,7 +40,8 @@ const Movies = ({ allMovies, showSelection, filteredMovies }) => {
 
 Movies.propTypes = {
   allMovies: PropTypes.arrayOf(PropTypes.object),
-  showSelection: PropTypes.func
+  showSelection: PropTypes.func,
+  filteredMovies: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Movies
