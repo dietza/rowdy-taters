@@ -39,7 +39,7 @@ class Details extends Component {
   render() {
     return (
       <section className='details__details-view'>
-        <Link to='/'>
+        <Link to='/' className='return-to-home-view-btn'>
           <button className='return-to-home-view-btn' onClick={this.clearID}>
           <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
           {'All Movies'}
