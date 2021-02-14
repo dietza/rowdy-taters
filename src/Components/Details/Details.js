@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
-import backArrow from './double-left-arrows.svg'
+import backArrow from '../../double-left-arrows.svg'
 import './Details.css'
 
 class Details extends Component {
@@ -40,7 +40,7 @@ class Details extends Component {
   render() {
     return (
       <section className='details__details-view'>
-        <Link to='/'>
+        <Link to='/' className='return-to-home-view-btn'>
           <button className='return-to-home-view-btn' onClick={this.clearID}>
           <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
           {'All Movies'}

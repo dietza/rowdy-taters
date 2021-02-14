@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
 import Details from '../Details/Details'
+import About from '../About/About'
+import Contact from '../Contact/Contact'
 import { fetchAllMovies } from '../../apiCalls'
 import './App.css'
 
@@ -35,22 +38,32 @@ class App extends Component {
     return (
       <>
         <Header />
+      
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
-        <Route exact path='/' 
-          render={ () => { 
-            return <Movies 
+        <Switch >
+          <Route exact path='/' 
+            render={ () => { 
+              return <Movies 
               allMovies={this.state.allMovies} 
               showSelection={this.toggleSelection}/>
-          }}/>
+            }}/>
+          
+          <Route path='/about' component={ About }/>
 
-        <Route path='/:id' 
-          render={( {match} ) => { 
-            return <Details 
-            selectedMovieID={match.params.id}
-            hideSelection={this.toggleSelection}/>
-          }}/>
 
+          <Route path='/contact-us' component={ Contact }/>
+
+          <Route path='/:id' 
+            render={( {match} ) => { 
+              return <Details 
+              selectedMovieID={match.params.id}
+              hideSelection={this.toggleSelection}/>
+            }}/>
+    
+          </Switch>
+    
+        <Footer />
       </>
     )
   }
