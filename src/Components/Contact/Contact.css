@@ -64,3 +64,19 @@ button:hover {
 .github-link {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 800px) {
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+    
+  }
+
+  .contact-info {
+    margin-bottom: 2rem;
+  }
+}

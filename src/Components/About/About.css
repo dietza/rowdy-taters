@@ -58,3 +58,14 @@ button:hover {
   justify-content: space-evenly;
   width: 100vw;
 }
+
+@media screen and (max-width: 800px) {
+  
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+  }
+
+}
