@@ -14,6 +14,7 @@ class App extends Component {
     super()
     this.state = {
       allMovies: [],
+      filteredMovies:[],
       isMovieSelected: false,
       selectedMovieID: null,
       isLoading: true,
@@ -34,10 +35,28 @@ class App extends Component {
       .catch(error => this.setState({ error: 'These taters got too rowdy - check back later!'}))
   }
 
+  filterMoviesDisplay = (searchTerms) => {
+
+    console.log('SEARCH TERMS', searchTerms)
+
+    const allMovies = this.state.allMovies;
+    const filteredMovies = allMovies.filter(movie => {
+
+      const searchTitle = movie.title.toLowerCase()
+      return searchTitle.includes(searchTerms.toLowerCase())
+    })
+    this.setState({
+      filteredMovies: filteredMovies,
+    })
+  }
+
   render() {
+
+    console.log('FILTERED MOVIES', this.state.filteredMovies)
+
     return (
       <>
-        <Header />
+        <Header filterMoviesDisplay={ this.filterMoviesDisplay }/>
       
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
