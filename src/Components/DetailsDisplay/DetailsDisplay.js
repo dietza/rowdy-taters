@@ -46,6 +46,7 @@ const DetailsDisplay = ({ movieToDisplay, trailersToDisplay }) => {
 
 DetailsDisplay.propTypes = {
   movieToDisplay: PropTypes.object.isRequired,
-  trailersToDisplay: PropTypes.array.isRequired
+  trailersToDisplay: PropTypes.arrayOf(PropTypes.object)
 }
+
 export default DetailsDisplay

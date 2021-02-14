@@ -27,7 +27,7 @@ const Movies = ({ allMovies, showSelection }) => {
 }
 
 Movies.propTypes = {
-  allMovies: PropTypes.array,
+  allMovies: PropTypes.arrayOf(PropTypes.object),
   showSelection: PropTypes.func
 }
 
