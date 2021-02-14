@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import backArrow from '../../double-left-arrows.svg'
+import tot from '../../tater_tot.jpg'
+
 import './About.css'
 
 const About = () => {
@@ -12,9 +14,19 @@ const About = () => {
         All Movies
       </button>
     </Link>
-    <h1>About Rowdy Taters</h1>
-    <img src="" alt="BEAUTIFUL CAT"/>
-    <p>info about the most perfect and rowdy cat there ever was, tater tot </p>
+    <section className="about-section">
+      <div className="img-wrap">
+        <img 
+          src={tot} 
+          alt="BEAUTIFUL CAT"
+          className="tater-tot-img"/>
+      </div>
+      <article className="about-section-text">
+        <h1 className="about-heading"> So why "Rowdy Taters"?</h1>
+        <p className="about-text">When we think of an opinionated, rambunctious, irreverent movie critic, we think of Tater Tot the cat. His keen eye and practiced talent for judgement, paired with his innate couch potato tendencies, as well as his unique perspective as someone not of the human species, gives him an unparalleled view of the movies in question. <br/> <br/> 
+        Though now that we think of it, maybe thats why Cats & Dogs 3 is one of the highest rated movies on the site...</p>
+      </article>
+    </section>
     </>
   )
 }
