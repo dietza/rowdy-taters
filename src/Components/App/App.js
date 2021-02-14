@@ -46,6 +46,9 @@ class App extends Component {
       return searchTitle.includes(searchTerms.toLowerCase())
     })
     this.setState({
+
+      
+
       filteredMovies: filteredMovies,
     })
   }
@@ -65,7 +68,8 @@ class App extends Component {
             render={ () => { 
               return <Movies 
               allMovies={this.state.allMovies} 
-              showSelection={this.toggleSelection}/>
+              showSelection={this.toggleSelection}
+              filteredMovies={this.state.filteredMovies}/>
             }}/>
           
           <Route path='/about' component={ About }/>
