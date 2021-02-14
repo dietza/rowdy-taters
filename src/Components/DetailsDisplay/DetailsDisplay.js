@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactPlayer from 'react-player'
-import './DetailsDisplay.css'
+import React from 'react';
+import ReactPlayer from 'react-player';
+import PropTypes from 'prop-types';
+import './DetailsDisplay.css';
 
-const DetailsDisplay = ({ movieToDisplay, trailerToDisplay }) => {
+const DetailsDisplay = ({ movieToDisplay, trailersToDisplay }) => {
   const releaseYear = movieToDisplay.release_date.split('-')[0]
   const rating = movieToDisplay.average_rating.toFixed(1)
   const genres = movieToDisplay.genres.map(genre => {
@@ -36,11 +37,16 @@ const DetailsDisplay = ({ movieToDisplay, trailerToDisplay }) => {
           <div className='details__movie-genres'>
           Genre: {genres}
           </div>}
-        {trailerToDisplay.length > 0 && 
-        <ReactPlayer url={`https://www.youtube.com/watch?v=${trailerToDisplay[0].key}`} />}
+        {trailersToDisplay.length > 0 && 
+        <ReactPlayer url={`https://www.youtube.com/watch?v=${trailersToDisplay[0].key}`} />}
     </article> 
     </>
   )
+}
+
+DetailsDisplay.propTypes = {
+  movieToDisplay: PropTypes.object.isRequired,
+  trailersToDisplay: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default DetailsDisplay
