@@ -58,7 +58,7 @@ class App extends Component {
 
         {this.state.error !== "" && 
               <>
-                <h2>{this.state.error}</h2>
+                <h2 className="error-message">{this.state.error}</h2>
                 <img src={tater} alt="Angry Potato Icon"/>
               </>}
 

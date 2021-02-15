@@ -23,6 +23,28 @@ describe('Rowdy Taters main page view', () => {
       .get('h1').contains('Rowdy Taters') 
   });
 
+  it ('Should be able to search for movies by title', () => {
+    cy
+      .get('form .search-input[type=text]').type('Peninsula')
+      .get('.movie-card-container')
+      .find('.movie-card').should('have.length', 1)
+        .should('have.id', '581392')
+
+      .get('form .search-input').clear()
+      .get('.movie-card-container')
+      .find('.movie-card').should('have.length', 5)
+  })
+
+  it ('Should show an error message if no available movies match the search', () => {
+    cy
+      .get('form .search-input[type=text]').type('50 Shades of Grey')
+      .get('.movie-card-container .error-message').should('contain', 'Sorry, no movies')
+
+      .get('form .search-input').clear()
+      .get('.movie-card-container')
+      .find('.movie-card').should('have.length', 5)
+  })
+
   it ('Should display all movies in the collected data',  () => {
     cy
       .get('.movie-card-container')
