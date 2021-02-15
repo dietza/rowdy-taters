@@ -15,7 +15,8 @@ describe('Rowdy Taters main page view', () => {
   });
 
   it ('Should have the correct url for the home page on load', () => {
-    cy.url().should('include', '/')
+    cy
+      .url().should('eq', `${baseUrl}/`)
   });
 
   it ('Should show the site header when the home page is loaded - "Rowdy Taters!"', () => {
