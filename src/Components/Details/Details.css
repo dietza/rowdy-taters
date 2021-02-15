@@ -67,3 +67,13 @@ button:hover {
 .details__each-genre {
   padding-left: .75rem;
 }
+
+@media screen and (max-width: 970px) {
+  
+}
+
+@media screen and (max-width: 800px) {
+  .details__movie-title {
+    font-size: 40pt;
+ }
+}

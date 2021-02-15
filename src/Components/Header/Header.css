@@ -12,3 +12,15 @@
   height: 5rem;
   width: auto;
 }
+
+@media screen and (max-width: 970px) {
+  .header {
+    font-size: xx-large;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    font-size: x-large;
+  }
+}
