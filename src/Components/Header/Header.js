@@ -4,10 +4,10 @@ import SearchBar from '../SearchBar/SearchBar'
 
 const Header = ({ filterMoviesDisplay }) => {
   return (
-    <>
-    <h1 className="header">Rowdy Taters!</h1>
+    <header className="header">
+    <h1 className="header-title">Rowdy Taters!</h1>
     <SearchBar filterMoviesDisplay={ filterMoviesDisplay }/>
-    </>
+    </header>
   )
 }
 

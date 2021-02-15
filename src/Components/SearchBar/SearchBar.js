@@ -6,7 +6,6 @@ class SearchBar extends Component {
     super()
     this.state = {
       searchInput: '',
-
     }
   }
 
@@ -16,17 +15,14 @@ class SearchBar extends Component {
     })
     this.props.filterMoviesDisplay(event.target.value)
   }
-  
-  // updateSearch = (event) => {
-  //   this.props.filterMoviesDisplay(event.target.value)
-  // }
 
   render = () => {
     return (
-      <form>
+      <form autoComplete="off">
         <input
+          className="search-input"
           type="text"
-          placeholder="Search by title or movie genres..."
+          placeholder="Search by movie title..."
           name="movie-search"
           value={this.state.searchInput}
           onChange={(event) => this.handleSearch(event)}
