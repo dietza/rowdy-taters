@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
-import Details from '../Details/Details'
-import About from '../About/About'
-import Contact from '../Contact/Contact'
-import { fetchAllMovies } from '../../apiCalls'
-import './App.css'
+import Details from '../Details/Details';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import { fetchAllMovies } from '../../apiCalls';
+import './App.css';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       allMovies: [],
+      filteredMovies: null,
       isMovieSelected: false,
       selectedMovieID: null,
       isLoading: true,
@@ -34,11 +35,26 @@ class App extends Component {
       .catch(error => this.setState({ error: 'These taters got too rowdy - check back later!'}))
   }
 
+  filterMoviesDisplay = (searchTerms) => {
+    const allMovies = this.state.allMovies;
+    const filteredMovies = allMovies.filter(movie => {
+      const searchTitle = movie.title.toLowerCase()
+      return searchTitle.includes(searchTerms.toLowerCase())
+    })
+    
+    this.setState({
+      filteredMovies: filteredMovies,
+    })
+  }
+
   render() {
     return (
       <>
-        <Header />
+        <Header filterMoviesDisplay={ this.filterMoviesDisplay }/>
       
+        {this.state.isLoading && !this.state.error &&
+        <h2>Loading...</h2>}
+
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
         <Switch >
@@ -46,11 +62,12 @@ class App extends Component {
             render={ () => { 
               return <Movies 
               allMovies={this.state.allMovies} 
-              showSelection={this.toggleSelection}/>
+              showSelection={this.toggleSelection}
+              filteredMovies={this.state.filteredMovies}
+              isLoading={this.state.isLoading}/>
             }}/>
           
           <Route path='/about' component={ About }/>
-
 
           <Route path='/contact-us' component={ Contact }/>
 

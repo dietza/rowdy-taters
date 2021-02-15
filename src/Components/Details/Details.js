@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
@@ -50,7 +50,7 @@ class Details extends Component {
         {this.state.error !== "" && <h2 className='details__error-message'>{this.state.error}</h2>}
 
         {this.state.isLoading && !this.state.error &&
-        <h1>Loading...</h1>}
+        <h2>Loading...</h2>}
 
         {!this.state.isLoading && 
         <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailersToDisplay={this.state.trailersToDisplay}/>}
