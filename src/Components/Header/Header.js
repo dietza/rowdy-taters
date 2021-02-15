@@ -1,6 +1,7 @@
 import React from 'react';
-import './Header.css'
-import SearchBar from '../SearchBar/SearchBar'
+import PropTypes from 'prop-types';
+import './Header.css';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Header = ({ filterMoviesDisplay }) => {
   return (
@@ -11,4 +12,7 @@ const Header = ({ filterMoviesDisplay }) => {
   )
 }
 
+Header.propTypes = {
+  filterMoviesDisplay: PropTypes.func
+}
 export default Header 
