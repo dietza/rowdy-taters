@@ -5,10 +5,10 @@ import './Footer.css'
 const Footer = () => {
   return (
     <footer className="footer">
-    <Link to="/about" >
+    <Link to="/about" className="about">
       <h3 className="about-link">About</h3>
     </Link>
-    <Link to="/contact-us">
+    <Link to="/contact-us" className="contact">
       <h3 className="contact-link">Contact Us</h3>
     </Link>
     </footer>

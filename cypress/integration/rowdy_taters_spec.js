@@ -20,8 +20,22 @@ describe('Rowdy Taters main page view', () => {
 
   it ('Should show the site header when the home page is loaded - "Rowdy Taters!"', () => {
     cy
-      .get('h1').contains('Rowdy Taters') 
+      .get('header .header-title').contains('Rowdy Taters') 
   });
+
+  it ('Should show the site footer, containing a link to the About page', () => {
+    cy
+      .get('footer').should('be.visible')
+      .find('.about').should('contain', 'About')
+      .should('have.attr', 'href', '/about')
+  })
+
+  it ('Should show the site footer, containing a link to the Contact page', () => {
+    cy
+      .get('footer').should('be.visible')
+      .find('.contact').should('contain', 'Contact Us')
+      .should('have.attr', 'href', '/contact-us')
+  })
 
   it ('Should be able to search for movies by title', () => {
     cy
