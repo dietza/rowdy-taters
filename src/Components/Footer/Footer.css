@@ -8,6 +8,10 @@
   border-top: 1.2pt solid white;
 }
 
+.footer a {
+  flex-grow: 0
+}
+
 .about-link, 
 .contact-link {
   text-align: right;

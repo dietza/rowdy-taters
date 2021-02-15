@@ -14,6 +14,7 @@
   border: 0;
   margin-left: .5rem;
   align-self: flex-start;
+  border: 2pt solid black;
 }
 
 button:hover {
@@ -42,8 +43,8 @@ button:hover {
   border-bottom: 2pt solid white;
   position: absolute;
   bottom: .25rem;
-  left: 2.25rem;
-  background-color: transparent;
+  left: 2.01rem;
+  background-color: rgba(0, 0, 0, 0.28);
   font-size: 60pt;
   padding-left: .85rem;
 }
@@ -60,4 +61,16 @@ button:hover {
 
 .details__each-genre {
   padding-left: .75rem;
+}
+
+@media screen and (max-width: 800px) {
+  .details__movie-title {
+    font-size: 40pt;
+ }
+}
+
+@media screen and (max-width: 350px) {
+  .details__movie-title {
+    font-size: 30pt;
+  }
 }

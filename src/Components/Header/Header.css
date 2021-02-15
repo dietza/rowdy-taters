@@ -12,6 +12,32 @@
   font-family: 'Lexend Mega',
   sans-serif;
   font-size: xxx-large;
-  padding-left: 2.5rem;
-  margin-bottom: 0rem;
+  width: 100vw;
+  padding-left: 2rem;
+  margin-bottom: .3rem;
+}
+
+.tater-img {
+  height: 5rem;
+  width: auto;
+}
+
+@media screen and (max-width: 970px) {
+  .header-title {
+    font-size: xx-large;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: x-large;
+    text-align: center;
+    padding: 0 0 1rem 0;
+  }
 }

@@ -7,6 +7,7 @@ import Details from '../Details/Details';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import { fetchAllMovies } from '../../apiCalls';
+import tater from '../../rowdytater1.png'
 import './App.css';
 
 class App extends Component {
@@ -55,7 +56,11 @@ class App extends Component {
         {this.state.isLoading && !this.state.error &&
         <h2>Loading...</h2>}
 
-        {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
+        {this.state.error !== "" && 
+              <>
+                <h2>{this.state.error}</h2>
+                <img src={tater} alt="Angry Potato Icon"/>
+              </>}
 
         <Switch >
           <Route exact path='/' 

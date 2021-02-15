@@ -1,14 +1,28 @@
 .movie-card {
-  border: 2pt solid white;
-  width: 18vw;
+  border: .5pt solid white;
+  width: 14rem;
+  height: auto;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  margin: .5rem;
+}
+.movie-card:hover {
+  transition: all .75s;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
+}
+
+a {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .poster {
-  height: 40vh;
-  width: 13vw
+  padding-top: .5rem;
+  height: 18.5rem;
+  width: 12.4rem;
 }
 
 .movie-specs {
@@ -24,4 +38,33 @@
 
 .movie-title {
   border-bottom: 2pt solid white;
+}
+
+@media screen and (max-width: 970px) {
+  .movie-card {
+    width: 30vw;
+  }
+
+  .movie-specs {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movie-card {
+    width: 20rem;
+  }
+
+  .poster {
+    height: 25rem;
+    width: auto
+  }
+
+  .movie-specs {
+    width: 15rem;
+  }
+
+  .movie-title {
+    margin: .5rem 0 .5rem 0
+  }
 }

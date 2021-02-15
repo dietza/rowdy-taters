@@ -4,6 +4,7 @@ import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from '../../double-left-arrows.svg'
+import tater from '../../rowdytater1.png'
 import './Details.css'
 
 class Details extends Component {
@@ -47,10 +48,14 @@ class Details extends Component {
           </button>
         </Link>
 
-        {this.state.error !== "" && <h2 className='details__error-message'>{this.state.error}</h2>}
+        {this.state.error !== "" && 
+        <>
+          <h2>{this.state.error}</h2>
+          <img src={tater} alt="Angry Potato Icon"/>
+        </>}
 
-        {this.state.isLoading && !this.state.error &&
-        <h2>Loading...</h2>}
+        {this.state.isLoading && this.state.error === "" && 
+        <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
         <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailersToDisplay={this.state.trailersToDisplay}/>}
