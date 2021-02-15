@@ -3,11 +3,11 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Movies from '../Movies/Movies';
-import Details from '../Details/Details'
-import About from '../About/About'
-import Contact from '../Contact/Contact'
-import { fetchAllMovies } from '../../apiCalls'
-import './App.css'
+import Details from '../Details/Details';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import { fetchAllMovies } from '../../apiCalls';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -52,6 +52,9 @@ class App extends Component {
       <>
         <Header filterMoviesDisplay={ this.filterMoviesDisplay }/>
       
+        {this.state.isLoading && !this.state.error &&
+        <h2>Loading...</h2>}
+
         {this.state.error !== "" && <h2 className='error-message'>{this.state.error}</h2>}
 
         <Switch >
@@ -60,7 +63,8 @@ class App extends Component {
               return <Movies 
               allMovies={this.state.allMovies} 
               showSelection={this.toggleSelection}
-              filteredMovies={this.state.filteredMovies}/>
+              filteredMovies={this.state.filteredMovies}
+              isLoading={this.state.isLoading}/>
             }}/>
           
           <Route path='/about' component={ About }/>
