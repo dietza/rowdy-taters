@@ -13,9 +13,8 @@
   sans-serif;
   font-size: xxx-large;
   width: 100vw;
-  padding: 3rem 0rem 1.5rem 6rem;
-  margin-bottom: 1rem;
-  border-bottom: 2pt solid white;
+  padding-left: 2rem;
+  margin-bottom: .3rem;
 }
 
 .tater-img {
@@ -24,13 +23,21 @@
 }
 
 @media screen and (max-width: 970px) {
-  .header {
+  .header-title {
     font-size: xx-large;
   }
 }
 
 @media screen and (max-width: 700px) {
   .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-title {
     font-size: x-large;
+    text-align: center;
+    padding: 0 0 1rem 0;
   }
 }

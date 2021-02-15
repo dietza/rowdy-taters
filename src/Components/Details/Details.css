@@ -63,12 +63,14 @@ button:hover {
   padding-left: .75rem;
 }
 
-@media screen and (max-width: 970px) {
-  
-}
-
 @media screen and (max-width: 800px) {
   .details__movie-title {
     font-size: 40pt;
  }
+}
+
+@media screen and (max-width: 350px) {
+  .details__movie-title {
+    font-size: 30pt;
+  }
 }

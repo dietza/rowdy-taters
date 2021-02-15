@@ -1,8 +1,14 @@
 form {
-  padding-right: 5rem;
+  padding-right: 3rem;
 }
 
 .search-input {
   width: 10rem;
   height: auto;
+}
+
+@media screen and (max-width: 700px) {
+  form {
+    padding: 0;
+  }
 }
