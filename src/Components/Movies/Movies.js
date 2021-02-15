@@ -32,7 +32,7 @@ const Movies = ({ allMovies, showSelection, filteredMovies, isLoading }) => {
 
   return (
     <section className='movie-card-container'>
-      { moviesToDisplay.length === 0 && !isLoading && <h2>Sorry, no movies matched your search!</h2> }
+      { moviesToDisplay.length === 0 && !isLoading && <h2 className="error-message">Sorry, no movies matched your search!</h2> }
       {moviesToDisplay}
     </section>
   )

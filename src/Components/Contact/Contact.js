@@ -9,7 +9,7 @@ const Contact = () => {
   return (
       <section className="contact-section">
 
-        <Link to='/' className='return-to-home-link'>
+        <Link to='/' className='contact__return-to-home-link'>
           <button className='contact__return-to-home-view-btn'>
             <img src={backArrow} alt='back arrow icon' className='contact__back-arrow'/>
             All Movies
@@ -17,7 +17,7 @@ const Contact = () => {
         </Link>
         <h1>Contact Us</h1>
         <section className="contacts">
-          <article className="contact-info">
+          <article className="contact-info AD">
             <div className="prof-pic-wrap">
             <img src={AD} alt="BEAUTIFUL ALLISON" className="prof-pic"/>
             </div>
@@ -26,9 +26,9 @@ const Contact = () => {
               target="_blank" 
               className="github-link">Allison D</a>
           </article>
-          <article className="contact-info">
+          <article className="contact-info KB">
             <div className="prof-pic-wrap">
-              <img src={KB} alt="BEAUTIFUL KB" className="prof-pic"/>
+              <img src={KB} alt="BEAUTIFUL KRISTEN" className="prof-pic"/>
             </div>
             <a 
               href="https://github.com/kristenmb" 
