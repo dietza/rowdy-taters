@@ -37,11 +37,11 @@ const DetailsDisplay = ({ movieToDisplay, trailersToDisplay }) => {
           <div className='details__movie-genres'>
           Genre: {genres}
           </div>}
-        {trailerToDisplay.length > 0 && 
+        {trailersToDisplay.length > 0 && 
         <ReactPlayer 
-          key={ trailerToDisplay.id }
+          key={ trailersToDisplay.id }
           width={ '50vw' }
-          url={`https://www.youtube.com/watch?v=${trailerToDisplay[0].key}`} />}
+          url={`https://www.youtube.com/watch?v=${trailersToDisplay[0].key}`} />}
     </article> 
     </>
   )

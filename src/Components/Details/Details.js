@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
-import backArrow from './double-left-arrows.svg'
+import backArrow from '../../double-left-arrows.svg'
 import tater from '../../rowdytater1.png'
 import './Details.css'
 
