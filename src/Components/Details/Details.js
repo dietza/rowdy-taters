@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
+import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
 import backArrow from './double-left-arrows.svg'
 import tater from '../../rowdytater1.png'
@@ -13,7 +15,7 @@ class Details extends Component {
       movieToDisplay: {},
       isLoading: true,
       error: "",
-      trailerToDisplay: {}
+      trailersToDisplay: []
     }
   }
 
@@ -24,11 +26,11 @@ class Details extends Component {
         this.findVideos()
       })
       .catch(error => this.setState({ error: "These taters got too rowdy - check back later!"}))
- 
   }
+
   findVideos = () => {
     fetchMovieVideos(this.state.selectedMovieID)
-      .then(trailers => this.setState({ trailerToDisplay: trailers.videos }))
+      .then(trailers => this.setState({ trailersToDisplay: trailers.videos }))
       .catch(error =>  this.setState({error: "These taters got too rowdy - check back later!"}) )
   }  
 
@@ -39,10 +41,12 @@ class Details extends Component {
   render() {
     return (
       <section className='details__details-view'>
-        <button className='return-to-home-view-btn' onClick={this.clearID}>
-        <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
-        {'All Movies'}
-        </button>
+        <Link to='/' className='return-to-home-view-btn'>
+          <button className='return-to-home-view-btn' onClick={this.clearID}>
+          <img src={backArrow} alt='back arrow icon' className='details__back-arrow'/>
+          {'All Movies'}
+          </button>
+        </Link>
 
         {this.state.error !== "" && 
         <>
@@ -54,10 +58,14 @@ class Details extends Component {
         <h1>Loading...</h1>}
 
         {!this.state.isLoading && 
-        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailerToDisplay={this.state.trailerToDisplay}/>}
+        <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailersToDisplay={this.state.trailersToDisplay}/>}
       </section>
     )
   }
 }
 
+Details.propTypes = {
+  selectedMovieID: PropTypes.string.isRequired,
+  hideSelection: PropTypes.func.isRequired
+}
 export default Details
