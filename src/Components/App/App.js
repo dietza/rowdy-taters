@@ -7,7 +7,7 @@ import Details from '../Details/Details';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import { fetchAllMovies } from '../../apiCalls';
-import tater from '../../rowdytater1.png'
+import tater from '../../assets/rowdytater1.png';
 import './App.css';
 
 class App extends Component {
@@ -16,7 +16,6 @@ class App extends Component {
     this.state = {
       allMovies: [],
       filteredMovies: null,
-      isMovieSelected: false,
       selectedMovieID: null,
       isLoading: true,
       error: ""
@@ -25,7 +24,6 @@ class App extends Component {
 
   toggleSelection = (movieID) => {
     this.setState({
-      isMovieSelected: !this.state.isMovieSelected, 
       selectedMovieID: movieID,
      })
   }

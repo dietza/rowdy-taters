@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import MovieCard from '../MovieCard/MovieCard'
-import './Movies.css'
+import MovieCard from '../MovieCard/MovieCard';
+import './Movies.css';
 
 const Movies = ({ allMovies, showSelection, filteredMovies, isLoading }) => {
 
@@ -45,4 +45,4 @@ Movies.propTypes = {
   isLoading: PropTypes.bool
 }
 
-export default Movies
+export default Movies;

@@ -19,4 +19,5 @@ const Header = ({ filterMoviesDisplay }) => {
 Header.propTypes = {
   filterMoviesDisplay: PropTypes.func
 }
-export default Header 
+
+export default Header; 

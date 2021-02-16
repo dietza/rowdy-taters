@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import backArrow from '../../double-left-arrows.svg';
-import AD from '../../AD.jpg'
-import KB from '../../KB1.jpg'
-import './Contact.css'
+import backArrow from '../../assets/double-left-arrows.svg';
+import AD from '../../assets/AD.jpg';
+import KB from '../../assets/KB1.jpg';
+import './Contact.css';
 
 const Contact = () => {
   return (
@@ -23,7 +23,8 @@ const Contact = () => {
             </div>
             <a 
               href="https://github.com/dietza" 
-              target="_blank" 
+              target="_blank"
+              rel="noreferrer"
               className="github-link">Allison D</a>
           </article>
           <article className="contact-info KB">
@@ -32,7 +33,8 @@ const Contact = () => {
             </div>
             <a 
               href="https://github.com/kristenmb" 
-              target="_blank" 
+              target="_blank"
+              rel="noreferrer"
               className="github-link">Kristen B</a>
           </article>
         </section>
@@ -41,4 +43,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;

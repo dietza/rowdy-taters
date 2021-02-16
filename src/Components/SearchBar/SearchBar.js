@@ -36,4 +36,5 @@ class SearchBar extends Component {
 SearchBar.propTypes = {
   filterMoviesDisplay: PropTypes.func.isRequired
 }
-export default SearchBar
+
+export default SearchBar;

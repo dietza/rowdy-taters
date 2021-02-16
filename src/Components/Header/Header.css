@@ -17,11 +17,6 @@
   margin-bottom: .3rem;
 }
 
-.tater-img {
-  height: 5rem;
-  width: auto;
-}
-
 @media screen and (max-width: 970px) {
   .header-title {
     font-size: xx-large;
