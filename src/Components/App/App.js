@@ -16,7 +16,6 @@ class App extends Component {
     this.state = {
       allMovies: [],
       filteredMovies: null,
-      isMovieSelected: false,
       selectedMovieID: null,
       isLoading: true,
       error: ""
@@ -25,7 +24,6 @@ class App extends Component {
 
   toggleSelection = (movieID) => {
     this.setState({
-      isMovieSelected: !this.state.isMovieSelected, 
       selectedMovieID: movieID,
      })
   }

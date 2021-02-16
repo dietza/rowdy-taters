@@ -23,7 +23,8 @@ const Contact = () => {
             </div>
             <a 
               href="https://github.com/dietza" 
-              target="_blank" 
+              target="_blank"
+              rel="noreferrer"
               className="github-link">Allison D</a>
           </article>
           <article className="contact-info KB">
@@ -32,7 +33,8 @@ const Contact = () => {
             </div>
             <a 
               href="https://github.com/kristenmb" 
-              target="_blank" 
+              target="_blank"
+              rel="noreferrer"
               className="github-link">Kristen B</a>
           </article>
         </section>
