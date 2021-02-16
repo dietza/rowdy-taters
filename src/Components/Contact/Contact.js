@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import backArrow from '../../double-left-arrows.svg';
-import AD from '../../AD.jpg'
-import KB from '../../KB1.jpg'
+import backArrow from '../../assets/double-left-arrows.svg';
+import AD from '../../assets/AD.jpg'
+import KB from '../../assets/KB1.jpg'
 import './Contact.css'
 
 const Contact = () => {

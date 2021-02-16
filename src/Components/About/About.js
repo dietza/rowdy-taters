@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import backArrow from '../../double-left-arrows.svg'
-import tot from '../../tater_tot.jpg'
+import backArrow from '../../assets/double-left-arrows.svg'
+import tot from '../../assets/tater_tot.jpg'
 
 import './About.css'
 

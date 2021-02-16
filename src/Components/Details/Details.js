@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
 import PropTypes from 'prop-types';
 import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
-import backArrow from '../../double-left-arrows.svg'
-import tater from '../../rowdytater1.png'
+import backArrow from '../../assets/double-left-arrows.svg'
+import tater from '../../assets/rowdytater1.png'
 import './Details.css'
 
 class Details extends Component {
