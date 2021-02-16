@@ -8,16 +8,15 @@ describe('Rowdy Taters main page view', () => {
     .then((mockPeninsulaData) => {
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
         statusCode: 200,
+        delay: 100,
         body: mockPeninsulaData
       })
     })
-    .as('loadAllMovies')
     
     cy.visit(baseUrl)
-      
   });
 
-  it ('Should show a loading status', () => {
+  it ('Should show a loading status while fetching movie info', () => {
     cy
       .get('.loading').should('contain', 'Loading')
       .should('be.visible')

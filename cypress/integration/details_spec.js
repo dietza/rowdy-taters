@@ -8,6 +8,7 @@ describe('Money Plane Details view', () => {
       .then((mockMoneyPlaneData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
           statusCode: 200,
+          delay: 100,
           body: mockMoneyPlaneData
         })
       })
@@ -17,6 +18,7 @@ describe('Money Plane Details view', () => {
       .then((mockMoneyPlaneData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {
           statusCode: 200,
+          delay: 100,
           body: mockMoneyPlaneData
         })
       })
@@ -24,7 +26,7 @@ describe('Money Plane Details view', () => {
     cy.visit(baseUrl)
   });
 
-  it ('Should show a loading status', () => {
+  it ('Should show a loading status while fetching movie details', () => {
     cy
       .get('.loading').should('contain', 'Loading')
       .should('be.visible')
