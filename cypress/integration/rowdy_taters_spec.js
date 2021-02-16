@@ -11,7 +11,16 @@ describe('Rowdy Taters main page view', () => {
         body: mockPeninsulaData
       })
     })
+    .as('loadAllMovies')
+    
     cy.visit(baseUrl)
+      
+  });
+
+  it ('Should show a loading status', () => {
+    cy
+      .get('h2').should('contain', 'Loading')
+      .should('be.visible')
   });
 
   it ('Should have the correct url for the home page on load', () => {
@@ -29,14 +38,14 @@ describe('Rowdy Taters main page view', () => {
       .get('footer').should('be.visible')
       .find('.about').should('contain', 'About')
       .should('have.attr', 'href', '/about')
-  })
+  });
 
   it ('Should show the site footer, containing a link to the Contact page', () => {
     cy
       .get('footer').should('be.visible')
       .find('.contact').should('contain', 'Contact Us')
       .should('have.attr', 'href', '/contact-us')
-  })
+  });
 
   it ('Should be able to search for movies by title', () => {
     cy
@@ -48,7 +57,7 @@ describe('Rowdy Taters main page view', () => {
       .get('form .search-input').clear()
       .get('.movie-card-container')
       .find('.movie-card').should('have.length', 5)
-  })
+  });
 
   it ('Should show an error message if no available movies match the search', () => {
     cy
@@ -58,7 +67,12 @@ describe('Rowdy Taters main page view', () => {
       .get('form .search-input').clear()
       .get('.movie-card-container')
       .find('.movie-card').should('have.length', 5)
-  })
+  });
+
+  it ('Should not show a loading status once movies have loaded', () => {
+    cy
+      .get('.error-message').should('not.exist')
+  });
 
   it ('Should display all movies in the collected data',  () => {
     cy
@@ -90,18 +104,32 @@ describe('Rowdy Taters main page view', () => {
 });
 
 
-describe('Main page error handling', () => {
+describe('Main page error handling 404', () => {
 
   const baseUrl = 'http://localhost:3000'
 
-  it ('Shows an error', () => {
+  it ('Shows an error for a 404 status code response', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
       statusCode: 404,
     })
 
     cy.visit(baseUrl)
       .get('.error-message').should('contain', 'These taters got too rowdy - check back later!')
-  })
+  });
+});
+
+describe('Main page error handling 500', () => {
+
+  const baseUrl = 'http://localhost:3000'
+
+  it ('Shows an error for a 500 status code response', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+    })
+
+    cy.visit(baseUrl)
+      .get('.error-message').should('contain', 'These taters got too rowdy - check back later!')
+  });
 
 });
   
@@ -146,6 +174,6 @@ describe('Peninsula Details view', () => {
       .get('#581392')
       .click()
       .get('.details__movie-title').should('contain', 'Peninsula')
-  })
+  });
 
 });
