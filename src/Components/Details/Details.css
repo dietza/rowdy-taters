@@ -7,8 +7,8 @@
 }
 
 .details__backdrop {
-  margin: 0;
   position: relative;
+  margin: 0;
 }
 
 .details__backdrop-img {
@@ -18,13 +18,13 @@
 }
 
 .details__movie-title {
+  font-size: 60pt;
   color: white;
-  border-bottom: 2pt solid white;
+  background-color: rgba(0, 0, 0, 0.28);
   position: absolute;
+  border-bottom: 2pt solid white;
   bottom: .25rem;
   left: 2.01rem;
-  background-color: rgba(0, 0, 0, 0.28);
-  font-size: 60pt;
   padding-left: .85rem;
 }
 
@@ -43,11 +43,11 @@
 }
 
 .return-to-home-view-btn {
+  font-size: 1.5rem;
+  color: white;
   display: flex;
   align-items: center;
   align-self: flex-start;
-  font-size: 1.5rem;
-  color: white;
   margin-left: .5rem;
   border: 2pt solid black;
 }
