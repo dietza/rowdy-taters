@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import './MovieCard.css'
+import './MovieCard.css';
 
 const MovieCard = ({ info, showSelection }) => {
   const releaseYear = info.release_date.split('-')[0]
@@ -37,4 +37,5 @@ MovieCard.propTypes = {
   info: PropTypes.object,
   showSelection: PropTypes.func
 }
-export default MovieCard
+
+export default MovieCard;

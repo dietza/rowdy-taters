@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import backArrow from '../../assets/double-left-arrows.svg';
-import AD from '../../assets/AD.jpg'
-import KB from '../../assets/KB1.jpg'
-import './Contact.css'
+import AD from '../../assets/AD.jpg';
+import KB from '../../assets/KB1.jpg';
+import './Contact.css';
 
 const Contact = () => {
   return (
@@ -41,4 +41,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;

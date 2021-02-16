@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls'
+import { fetchMovieDetails, fetchMovieVideos } from '../../apiCalls';
 import PropTypes from 'prop-types';
-import DetailsDisplay from '../DetailsDisplay/DetailsDisplay'
-import backArrow from '../../assets/double-left-arrows.svg'
-import tater from '../../assets/rowdytater1.png'
-import './Details.css'
+import DetailsDisplay from '../DetailsDisplay/DetailsDisplay';
+import backArrow from '../../assets/double-left-arrows.svg';
+import tater from '../../assets/rowdytater1.png';
+import './Details.css';
 
 class Details extends Component {
   constructor(props) {
@@ -68,4 +68,5 @@ Details.propTypes = {
   selectedMovieID: PropTypes.string.isRequired,
   hideSelection: PropTypes.func.isRequired
 }
-export default Details
+
+export default Details;

@@ -7,7 +7,7 @@ import Details from '../Details/Details';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import { fetchAllMovies } from '../../apiCalls';
-import tater from '../../assets/rowdytater1.png'
+import tater from '../../assets/rowdytater1.png';
 import './App.css';
 
 class App extends Component {
