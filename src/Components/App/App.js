@@ -52,7 +52,7 @@ class App extends Component {
         <Header filterMoviesDisplay={ this.filterMoviesDisplay }/>
       
         {this.state.isLoading && !this.state.error &&
-        <h2>Loading...</h2>}
+        <h2 className="loading">Loading...</h2>}
 
       <Switch >
         <Route exact path='/'

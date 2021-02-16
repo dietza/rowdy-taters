@@ -19,7 +19,7 @@ describe('Rowdy Taters main page view', () => {
 
   it ('Should show a loading status', () => {
     cy
-      .get('h2').should('contain', 'Loading')
+      .get('.loading').should('contain', 'Loading')
       .should('be.visible')
   });
 
@@ -71,7 +71,7 @@ describe('Rowdy Taters main page view', () => {
 
   it ('Should not show a loading status once movies have loaded', () => {
     cy
-      .get('.error-message').should('not.exist')
+      .get('.loading').should('not.exist')
   });
 
   it ('Should display all movies in the collected data',  () => {

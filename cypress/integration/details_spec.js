@@ -6,15 +6,6 @@ describe('Money Plane Details view', () => {
     cy
       .fixture('moneyPlaneMockData.json')
       .then((mockMoneyPlaneData) => {
-        cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-          statusCode: 200,
-          body: mockMoneyPlaneData
-        })
-      })
-
-    cy
-      .fixture('moneyPlaneMockData.json')
-      .then((mockMoneyPlaneData) => {
         cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
           statusCode: 200,
           body: mockMoneyPlaneData
@@ -33,6 +24,12 @@ describe('Money Plane Details view', () => {
     cy.visit(baseUrl)
   });
 
+  it ('Should show a loading status', () => {
+    cy
+      .get('.loading').should('contain', 'Loading')
+      .should('be.visible')
+  });
+
   it ('Should have the correct url for the page showing details for the specified movie', () => {
     cy
       .url().should('eq', `${baseUrl}`)
@@ -40,6 +37,11 @@ describe('Money Plane Details view', () => {
 
   it('Has the site header - Rowdy Taters', () => {
     cy.get('h1').contains('Rowdy Taters!')
+  });
+
+  it ('Should not show a loading status once page has loaded', () => {
+    cy
+      .get('.loading').should('not.exist')
   });
 
   it('Has a button called All Movies', () => {
@@ -77,13 +79,28 @@ describe('Money Plane Details view', () => {
 });
 
 
-describe('Details view error handling - Money Plane', () => {
+describe('Details view error handling for 404 status code - Money Plane', () => {
 
   const baseUrl = 'http://localhost:3000/694919'
 
-  it ('Shows an error', () => {
+  it ('Shows an error for a 404 status code response', () => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
       statusCode: 404,
+    })
+
+    cy.visit(baseUrl)
+      .get('.error-message').should('contain', 'These taters got too rowdy - check back later!')
+  })
+
+});
+
+describe('Details view error handling for 500 status code - Money Plane', () => {
+
+  const baseUrl = 'http://localhost:3000/694919'
+
+  it ('Shows an error for a 500 status code response', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
+      statusCode: 500,
     })
 
     cy.visit(baseUrl)
