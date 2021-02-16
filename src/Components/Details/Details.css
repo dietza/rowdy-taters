@@ -6,27 +6,6 @@
   margin-bottom: 5rem
 }
 
-.return-to-home-view-btn {
-   display: flex;
-   align-items: center;
-  font-size: 1.5rem;
-  color: white;
-  border: 0;
-  margin-left: .5rem;
-  align-self: flex-start;
-  border: 2pt solid black;
-}
-
-button:hover {
-  border: 2pt solid white;
-}
-
-.details__back-arrow {
-  width: 1.5rem;
-  height: 1.5rem;
-  padding: .5rem;
-}
-
 .details__backdrop {
   margin: 0;
   position: relative;
@@ -50,8 +29,8 @@ button:hover {
 }
 
 .details__movie-specs {
-  align-content: flex-start;
   width: 50vw;
+  align-content: flex-start;
 }
 
 .details__movie-genres {
@@ -61,6 +40,26 @@ button:hover {
 
 .details__each-genre {
   padding-left: .75rem;
+}
+
+.return-to-home-view-btn {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  font-size: 1.5rem;
+  color: white;
+  margin-left: .5rem;
+  border: 2pt solid black;
+}
+
+button:hover {
+  border: 2pt solid white;
+}
+
+.details__back-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .5rem;
 }
 
 @media screen and (max-width: 800px) {
