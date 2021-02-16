@@ -20,7 +20,7 @@ describe('About Page', () => {
       .find('.about').should('contain', 'About')
       .should('have.attr', 'href', '/about')
       .click()
-  })
+  });
 
   it ('Should have the correct url for the About page', () => {
     cy
@@ -32,19 +32,19 @@ describe('About Page', () => {
       .get('.about-section .img-wrap')
       .find('.tater-tot-img').should('have.attr', 'src', '/static/media/tater_tot.d3f50281.jpg')
       .should('have.attr', 'alt', 'BEAUTIFUL CAT')
-  })
+  });
 
   it ('Should have a heading for the About section', () => {
     cy
       .get('.about-section .about-section-text')
       .find('.about-heading').should('contain', 'why "Rowdy Taters"')
-  })
+  });
 
   it ('Should have a explanation about "Rowdy Taters"', () => {
     cy
       .get('.about-section .about-section-text')
       .find('.about-text').should('contain', 'an unparalleled view')
-  })
+  });
 
   it ('Should show the site footer, and be able to navigate to and from the Contact page', () => {
     cy
@@ -56,7 +56,7 @@ describe('About Page', () => {
 
     .get('footer .about')
     .click()
-  })
+  });
 
   it ('Should be able to navigate back to the home view by clicking the "All Movies" button', () => {
     cy
@@ -67,6 +67,5 @@ describe('About Page', () => {
       .click()
 
       .url().should('eq', `${baseUrl}/`)
-  })
-
-})
+  });
+});
