@@ -54,21 +54,22 @@ class App extends Component {
         {this.state.isLoading && !this.state.error &&
         <h2>Loading...</h2>}
 
-        {this.state.error !== "" && 
-              <>
+      <Switch >
+        <Route exact path='/'
+          render={() => {
+            return this.state.error !== "" ? 
+              (<>
                 <h2 className="error-message">{this.state.error}</h2>
-                <img src={tater} alt="Angry Potato Icon"/>
-              </>}
-
-        <Switch >
-          <Route exact path='/' 
-            render={ () => { 
-              return <Movies 
+                <img src={tater} alt="Angry Potato Icon"
+                />
+              </>) :
+              (<Movies 
               allMovies={this.state.allMovies} 
               showSelection={this.toggleSelection}
               filteredMovies={this.state.filteredMovies}
-              isLoading={this.state.isLoading}/>
-            }}/>
+              isLoading={this.state.isLoading}/>)
+            }}
+          />
           
           <Route path='/about' component={ About }/>
 
