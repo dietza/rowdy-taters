@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import PropTypes from 'prop-types';
-import './DetailsDisplay.css';
 
 const DetailsDisplay = ({ movieToDisplay, trailersToDisplay }) => {
   const releaseYear = movieToDisplay.release_date.split('-')[0]
