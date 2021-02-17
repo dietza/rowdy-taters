@@ -2,7 +2,7 @@
 
 **Rowdy Taters** is a site featuring information about various movies, including their release year, runtime, synopsis, genres, ratings and trailers.
 
-Visit the deployed site [here]()
+Visit the deployed site [here](https://rowdy-taters.herokuapp.com/)
 
 ## Usage
 
