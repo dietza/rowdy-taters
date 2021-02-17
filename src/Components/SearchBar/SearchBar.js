@@ -25,7 +25,7 @@ class SearchBar extends Component {
           type="text"
           placeholder="Search by movie title..."
           name="movie-search"
-          aria-label="movie-search"
+          aria-label="movie-search-input"
           value={this.state.searchInput}
           onChange={(event) => this.handleSearch(event)}
         />
