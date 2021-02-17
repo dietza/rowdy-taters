@@ -8,15 +8,15 @@ Visit the deployed site [here]()
 
 Users can visit the site and view the movie database for the site. Users can use the search bar to look for movies by keywords included in the title, or simply scroll through the movies to find one they want to learn more about. 
 
-![gif of main page]()
+![gif of main page](https://media.giphy.com/media/3V84nt2xPwFyJbjEIE/giphy.gif)
 
 Users can click on a movie to see further details. A new page should load with specific information about that movie, as well as a trailer or featurette. After viewing movie details, the user can navigate back to the main page via the All Movies button.
 
-![gif of details view]()
+![gif of details view](https://media.giphy.com/media/roWc8ONAfDtfBktXGo/giphy.gif)
 
 Users can also navigate to an About page describing the inspiration for site’s whimsical name, as well as a Contact Us page with links to the creators GitHub profiles. 
 
-![gif of about and contact]()
+![gif of about and contact](https://media.giphy.com/media/7OLHnEDC5hTaijZKTR/giphy.gif)
 
 
 
@@ -41,10 +41,12 @@ The detailed spec for this project can be found [here](https://frontend.turing.i
 - Because the data used for this project was fetched from an API, some information was missing for certain movies. The team had to utilize conditional rendering for the data to account for instances of missing data points. 
 
 ## Wins
-- learning & implementing several new technologies within the two week duration of this project
-- taking the time to fully understand and grasp concepts
-- teamwork
-- communication
+- Learning & implementing several new technologies within the two week duration of the project.
+- Taking the time to fully understand and grasp new concepts before jumping in to implement them. 
+- Solid teamwork.
+- Clear and direct communication.
+- Accessiblity - Reaching 100% on lighthouse audit on every page view. 
+- Responsive Design. 
 
 ## Technologies Used
 1. React
