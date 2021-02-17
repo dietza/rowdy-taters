@@ -17,7 +17,7 @@ const About = () => {
       <div className="img-wrap">
         <img 
           src={tot} 
-          alt="BEAUTIFUL CAT"
+          alt="a rowdy, long-haired, orange and white cat named 'Tater Tot' lies out-stretched on his back, looking at the camera"
           className="tater-tot-img"/>
       </div>
       <article className="about-section-text">
