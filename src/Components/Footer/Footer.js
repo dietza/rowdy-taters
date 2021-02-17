@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <footer className="footer">
     <Link to="/about" className="about">
-      <h3 className="about-link">About</h3>
+      <h2 className="about-link">About</h2>
     </Link>
     <Link to="/contact-us" className="contact">
-      <h3 className="contact-link">Contact Us</h3>
+      <h2 className="contact-link">Contact Us</h2>
     </Link>
     </footer>
   )

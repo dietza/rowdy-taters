@@ -19,7 +19,7 @@ const Contact = () => {
         <section className="contacts">
           <article className="contact-info AD">
             <div className="prof-pic-wrap">
-            <img src={AD} alt="BEAUTIFUL ALLISON" className="prof-pic"/>
+            <img src={AD} alt="a woman wearing a windbreaker and solar glasses stares out into the sky" className="prof-pic"/>
             </div>
             <a 
               href="https://github.com/dietza" 
@@ -29,7 +29,7 @@ const Contact = () => {
           </article>
           <article className="contact-info KB">
             <div className="prof-pic-wrap">
-              <img src={KB} alt="BEAUTIFUL KRISTEN" className="prof-pic"/>
+              <img src={KB} alt="a woman with blue hair, wearing a scarf and denim jacket, smiles for an approachable portrait" className="prof-pic"/>
             </div>
             <a 
               href="https://github.com/kristenmb" 
