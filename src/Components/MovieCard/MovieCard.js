@@ -12,7 +12,7 @@ const MovieCard = ({ info, showSelection }) => {
   }
 
   return (
-    <article className='movie-card' onClick={getID} id={info.id}>
+    <article className='movie-card' onClick={getID} id={info.id} name={`${info.title}-card`} aria-label={`${info.title}-card`}>
       <img
         className='poster'
         src={info.poster_path}
