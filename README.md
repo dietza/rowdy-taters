@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 🎥 Rowdy Taters
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Rowdy Taters** is a site featuring information about various movies, including their release year, runtime, synopsis, genres, ratings and trailers.
 
-## Available Scripts
+Visit the deployed site [here]()
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+Users can visit the site and view the movie database for the site. Users can use the search bar to look for movies by keywords included in the title, or simply scroll through the movies to find one they want to learn more about. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![gif of main page]()
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users can click on a movie to see further details. A new page should load with specific information about that movie, as well as a trailer or featurette. After viewing movie details, the user can navigate back to the main page via the All Movies button.
 
-### `npm test`
+![gif of details view]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users can also navigate to an About page describing the inspiration for site’s whimsical name, as well as a Contact Us page with links to the creators GitHub profiles. 
 
-### `npm run build`
+![gif of about and contact]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How to Install
+1. `fork` this repository
+2. `git clone` it down to your command line
+3. Navigate into the repository on your machine
+4. Run `npm install`
+5. Run `npm start`
 
-### `npm run eject`
+Testing can be accessed by running `npm start cypress`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Planning
+We utilized GitHub Pages for project management, that board can be found [here](https://github.com/dietza/rowdy-taters/projects/1)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The detailed spec for this project can be found [here](https://frontend.turing.io/projects/module-3/rancid-tomatillos-v3.html)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Challenges
+- This entire project required the team to implement new technologies for the first time, and we felt the learning curve for the first week. After getting a handle on React and utilizing conditional rendering for the various component displays, we refactored the site using Router to replace the conditional rendering of components. After finalizing our displays and UI, we implemented Cypress, which was initially a challenge to implement effectively, but after some deeper research the team was proud to be able to create a robust testing suite. 
+- Because the data used for this project was fetched from an API, some information was missing for certain movies. The team had to utilize conditional rendering for the data to account for instances of missing data points. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Wins
+- learning & implementing several new technologies within the two week duration of this project
+- taking the time to fully understand and grasp concepts
+- teamwork
+- communication
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies Used
+1. React
+2. React Router
+3. Cypress
+4. FetchAPI
+5. CSS
 
-### Code Splitting
+## Future Iterations
+- Additional search functionality by genre
+- Trailer carousel 
+- Ability for user to add their own rating to movies
+- Favoriting/Watch later functionality
+- 'I’ve seen this movie' functionality 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Authors
+This project was designed and implemented by [Allison Dietz](https://github.com/dietza) and [Kristen Bair](https://github.com/kristenmb)
