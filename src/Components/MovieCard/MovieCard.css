@@ -1,3 +1,9 @@
+a {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
 .movie-card {
   width: 14rem;
   height: auto;
@@ -14,16 +20,14 @@
   box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5);
 }
 
-a {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-}
-
 .poster {
   width: 12.4rem;
   height: 18.5rem;
   padding-top: .5rem;
+}
+
+.movie-title {
+  border-bottom: 2pt solid white;
 }
 
 .movie-specs {
@@ -34,11 +38,7 @@ a {
 
 .movie-release,
 .movie-rating {
-  margin: 0
-}
-
-.movie-title {
-  border-bottom: 2pt solid white;
+  margin: 0;
 }
 
 @media screen and (max-width: 970px) {
@@ -66,6 +66,6 @@ a {
   }
 
   .movie-title {
-    margin: .5rem 0 .5rem 0
+    margin: .5rem 0 .5rem 0;
   }
 }

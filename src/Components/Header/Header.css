@@ -1,18 +1,18 @@
 .header {
-  border-bottom: 2pt solid white;
   width: 100vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 2pt solid white;
   padding: 3rem 0rem 1.5rem 0rem;
   margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .header-title {
+  width: 100vw;
   font-family: 'Lexend Mega',
   sans-serif;
   font-size: xxx-large;
-  width: 100vw;
   padding-left: 2rem;
   margin-bottom: .3rem;
 }
