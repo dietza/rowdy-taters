@@ -20,7 +20,7 @@ describe('Contact Us Page', () => {
       .find('.contact').should('contain', 'Contact')
       .should('have.attr', 'href', '/contact-us')
       .click()
-  })
+  });
 
   it ('Should have the correct url for the Contact page', () => {
     cy
@@ -31,33 +31,33 @@ describe('Contact Us Page', () => {
     cy
       .get('.contact-section')
       .find('h1').should('contain', 'Contact Us')
-  })
+  });
 
   it ('Should have an image of a rowdy tater (Allison)', () => {
     cy
       .get('.contacts .AD')
       .find('.prof-pic').should('have.attr', 'src', '/static/media/AD.8304e665.jpg')
       .should('have.attr', 'alt', 'BEAUTIFUL ALLISON')
-  })
+  });
 
   it ('Should have a link which routes to the tater\'s GitHub profile', () => {
     cy
     .get('.contacts .AD')
     .find('.github-link').should('have.attr', 'href', 'https://github.com/dietza')
-  })
+  });
 
   it ('Should have an image of a rowdy tater (Kristen)', () => {
     cy
       .get('.contacts .KB')
       .find('.prof-pic').should('have.attr', 'src', '/static/media/KB1.53ab6cc0.jpg')
       .should('have.attr', 'alt', 'BEAUTIFUL KRISTEN')
-  })
+  });
 
   it ('Should have a link which routes to the tater\'s GitHub profile', () => {
     cy
     .get('.contacts .KB')
     .find('.github-link').should('have.attr', 'href', 'https://github.com/kristenmb')
-  })
+  });
 
   it ('Should show the site footer, and be able to navigate to and from the About page', () => {
     cy
@@ -69,7 +69,7 @@ describe('Contact Us Page', () => {
 
     .get('footer .contact')
     .click()
-  })
+  });
 
   it ('Should be able to navigate back to the home view by clicking the "All Movies" button', () => {
     cy
@@ -80,6 +80,5 @@ describe('Contact Us Page', () => {
       .click()
 
       .url().should('eq', `${baseUrl}/`)
-  })
-
-})
+  });
+});

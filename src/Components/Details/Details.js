@@ -55,7 +55,7 @@ class Details extends Component {
         </>}
 
         {this.state.isLoading && this.state.error === "" && 
-        <h1>Loading...</h1>}
+        <h1 className="loading">Loading...</h1>}
 
         {!this.state.isLoading && 
         <DetailsDisplay movieToDisplay={this.state.movieToDisplay} trailersToDisplay={this.state.trailersToDisplay}/>}
