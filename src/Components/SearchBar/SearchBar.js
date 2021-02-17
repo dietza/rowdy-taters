@@ -19,12 +19,13 @@ class SearchBar extends Component {
 
   render = () => {
     return (
-      <form autoComplete="off">
+      <form role="search" autoComplete="off">
         <input
           className="search-input"
           type="text"
           placeholder="Search by movie title..."
           name="movie-search"
+          aria-label="movie-search"
           value={this.state.searchInput}
           onChange={(event) => this.handleSearch(event)}
         />
