@@ -4,6 +4,6 @@
 
 #### How is this manually tested?
 
-#### Any relevent tickets?
+#### Any relevant tickets?
 
 #### Additional questions / considerations?
